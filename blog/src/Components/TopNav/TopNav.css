@@ -1,0 +1,54 @@
+nav {
+  background: black;
+  color: white;
+}
+.nav-grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.nav-grid-item {
+}
+
+.nav-grid-item-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul {
+  display: none;
+  text-align: right;
+  list-style: none;
+  padding-right: 15px;
+}
+
+li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.logo {
+  text-align: left;
+  padding: 7px 15px 2px;
+  margin: -1px 0 5px;
+  color: white;
+}
+
+.logo > a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo > a:hover {
+  color: salmon;
+}
+
+@media screen and (min-width: 678px) {
+  ul {
+    display: block;
+  }
+
+  .logo {
+    margin: 10px 0 5px;
+  }
+}

@@ -1,0 +1,28 @@
+#banner {
+  text-align: center;
+}
+#contact-form {
+  width: 200px;
+}
+
+#contact-form input {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  border: none;
+  box-shadow: none;
+}
+
+@media screen and (min-width: 678px) {
+  #contact-form input {
+    max-width: 300px;
+  }
+
+  #contact-form {
+    width: 300px;
+  }
+}

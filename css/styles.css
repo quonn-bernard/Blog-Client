@@ -1,0 +1,15 @@
+body{
+padding: 0;
+margin: 0;
+}
+
+/* Nav Styles */
+#main-nav{
+    background: black;
+    padding: 10px 15px;
+}
+
+#main-nav > h1, a{
+    margin: 0;
+    color: white;
+}
