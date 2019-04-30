@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import TopNav from "./Components/TopNav/TopNav";
 import Landing from "./Components/Landing/Landing";
 import BlogFeed from "./Components/BlogFeed/BlogFeed";
-import Registration from "./Components/Registration/Registration";
+import Registration from "./routes/Registration/Registration";
 import Contact from "./Components/Contact/Contact";
 import ToggleNav from "./Components/ToggleNav/ToggleNav";
 import Backdrop from "./Components/Backdrop/Backdrop";
