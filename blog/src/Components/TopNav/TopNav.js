@@ -51,6 +51,11 @@ class TopNav extends React.Component {
                 <Dropdown title="Select category" list={this.state.category} />
               </li>
               <li>
+                <Link className="navLinks" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li>
                 <Link className="navLinks" to="/register">
                   Register
                 </Link>

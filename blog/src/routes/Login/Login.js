@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import LoginForm from '../../components/LoginForm/LoginForm'
-import { Section } from '../../components/Utils/Utils'
+import LoginForm from '../../Components/LoginForm/LoginForm'
+import { Section } from '../../Components/Utils/Utils'
 
 class Login extends Component {
   static defaultProps = {
@@ -11,9 +11,10 @@ class Login extends Component {
   }
 
   handleLoginSuccess = () => {
-    const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
-    history.push(destination)
+    alert('Successfully logged in')
+    // const { location, history } = this.props
+    // const destination = (location.state || {}).from || '/'
+    // history.push(destination)
   }
 
   render() {

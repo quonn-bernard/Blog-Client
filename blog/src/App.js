@@ -4,6 +4,7 @@ import TopNav from "./Components/TopNav/TopNav";
 import Landing from "./Components/Landing/Landing";
 import BlogFeed from "./Components/BlogFeed/BlogFeed";
 import Registration from "./routes/Registration/Registration";
+import Login from "./routes/Login/Login";
 import Contact from "./Components/Contact/Contact";
 import ToggleNav from "./Components/ToggleNav/ToggleNav";
 import Backdrop from "./Components/Backdrop/Backdrop";
@@ -62,6 +63,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path={"/"} component={Landing} />
             <Route path={"/blogFeed"} component={BlogFeed} />
+            <Route path={"/login"} component={Login} />
             <Route path={"/register"} component={Registration} />
             <Route path={"/contact"} component={Contact} />
           </Switch>
