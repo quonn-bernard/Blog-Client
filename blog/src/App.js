@@ -10,12 +10,14 @@ import Backdrop from "./Components/Backdrop/Backdrop";
 import "./App.css";
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
       ToggleNavOpen: false,
-      ToggleMenuLinkOpen: false
+      ToggleMenuLinkOpen: false,
     };
+
   }
 
   drawerToggleClickHandler = () => {
@@ -28,9 +30,22 @@ class App extends React.Component {
     this.drawerToggleClickHandler();
   };
 
+  logout() {
+    console.log('logout');
+  }
+
   render() {
     let toggleNav;
     let backdrop;
+
+    const notificationStyles = {
+      color: "white",
+      padding: "10px",
+      position: "absolute",
+      top: `${this.state.top}px`,
+      right: "10px",
+      zIndex: "1000"
+    }
 
     if (this.state.ToggleNavOpen) {
       toggleNav = <ToggleNav />;
@@ -38,13 +53,14 @@ class App extends React.Component {
     }
 
     return (
+
       <div className="App">
         <TopNav hamburgerClick={this.drawerToggleClickHandler} />
         <main>
           {toggleNav}
           {backdrop}
           <Switch>
-            <Route exact path={"/"} component={Landing}  />
+            <Route exact path={"/"} component={Landing} />
             <Route path={"/blogFeed"} component={BlogFeed} />
             <Route path={"/register"} component={Registration} />
             <Route path={"/contact"} component={Contact} />
@@ -56,3 +72,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+

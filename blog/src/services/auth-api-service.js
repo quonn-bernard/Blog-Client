@@ -18,7 +18,7 @@ const AuthApiService = {
 
   // This is a call to the server at localhost:8000/api/users to add new user to DB
   postUser(user) {
-    return fetch (`${config.API_ENDPOINT}/users`, {
+    return fetch (`${config.API_ENDPOINT}/subscribers`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
