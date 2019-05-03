@@ -41,6 +41,11 @@ class TopNav extends React.Component {
           to='/'>
           Logout
         </Link>
+        <Hyph />
+        <Link
+          to='/create_post'>
+          Create Post
+        </Link>
       </div>
     )
   }
