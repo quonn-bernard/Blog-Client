@@ -8,6 +8,7 @@ import Login from "./routes/Login/Login";
 import Contact from "./Components/Contact/Contact";
 import ToggleNav from "./Components/ToggleNav/ToggleNav";
 import Backdrop from "./Components/Backdrop/Backdrop";
+import Create_Post from "./routes/Create_Post/Create_Post";
 import "./App.css";
 
 class App extends React.Component {
@@ -65,6 +66,7 @@ class App extends React.Component {
             <Route path={"/blogFeed"} component={BlogFeed} />
             <Route path={"/login"} component={Login} />
             <Route path={"/register"} component={Registration} />
+            <Route path={"/create_post"} component={Create_Post} />
             <Route path={"/contact"} component={Contact} />
           </Switch>
         </main>
