@@ -23,31 +23,33 @@
   color: #61dafb;
 }
 
-.navLinks, .logo{
+.navLinks,
+.logo {
   text-decoration: none;
   color: white;
 }
 
-.navLinks:hover, .logo:hover{
+.navLinks:hover,
+.logo:hover {
   color: salmon;
 }
 
 /* Classes */
 
-.section{
+.section {
   padding: 30px;
 }
 
-.section-grid{
-  display:grid;
-  grid-template-columns: auto 65% auto
+.section-grid {
+  display: grid;
+  grid-template-columns: auto 65% auto;
 }
 
-.grey-bg{
+.grey-bg {
   background: grey;
 }
 
-.btn{
+.btn {
   margin: 0 5px;
   background: black;
   color: white;
@@ -56,17 +58,23 @@
   border-radius: 3px;
 }
 
-.section-grid-item{
+.section-grid-item {
   text-align: center;
   padding: 15px 0;
-  margin:auto;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+.flexed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
