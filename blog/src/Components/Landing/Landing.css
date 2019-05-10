@@ -10,6 +10,7 @@
   width: 100%;
   max-width: 200px;
   margin-bottom: 15px;
+  height: 35px;
 }
 
 input[type="submit"] {
@@ -19,6 +20,18 @@ input[type="submit"] {
 
 h3{
   margin-bottom: 30px;
+}
+
+button.Button.btn.submit_btn{
+  width: 100%;
+}
+
+.loginForm > input {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 15px;
+  height: 35px;
 }
 
 @media screen and (min-width: 678px) {

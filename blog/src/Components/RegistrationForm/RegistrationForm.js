@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button, Input, Required, Textarea } from '../Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
-import Notification from '../Notifications/Notifications';
-import { NotificationConsumer } from "../../NotificationContext/NotificationContext";
+import FeedContext from "../../contexts/FeedContext";
+import Notification from "../Notifications/Notifications";
 
 class RegistrationForm extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  
+  static contextType = FeedContext
+
   static defaultProps = {
     onRegistrationSuccess: () => { }
   }
@@ -17,7 +17,7 @@ class RegistrationForm extends React.Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { email, user_name, password } = ev.target
-    
+
     this.setState({ error: null })
     AuthApiService.postUser({
       user_name: user_name.value,
@@ -28,7 +28,14 @@ class RegistrationForm extends React.Component {
         email.value = ''
         user_name.value = ''
         password.value = ''
-        this.props.onRegistrationSuccess()
+        if(this.state.error === null){
+          this.props.onRegistrationSuccess()
+        }
+        this.timeout = setTimeout(() => {
+          this.props.onRegistrationSuccess()
+      }, 2000)
+
+        
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -37,16 +44,12 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { error } = this.state;
-    const value = {
-      name: "Moe",
-    }
-
+    
     return (
 
-      <NotificationConsumer>
-
-        {value => (
-          <div>
+      <React.Fragment>
+        <Notification top={this.context.top} message={`created ${this.context.user}`} notification={this.context.notification}></Notification>
+        <div>
 
           <section className="section section-grid">
             <div></div>
@@ -57,56 +60,49 @@ class RegistrationForm extends React.Component {
                   {error && <p className='red'>{error}</p>}
                 </div>
                 <div className='user_name'>
-                  <label htmlFor='RegistrationForm__user_name'>
-                    User name <Required />
-                  </label>
+                  
                   <Input
                     name='user_name'
                     type='text'
                     required
-                    id='RegistrationForm__user_name'>
+                    id='RegistrationForm__user_name'
+                    placeholder="Username(Required)"
+                    className="text">
                   </Input>
                 </div>
 
                 <div className='email'>
-                  <label htmlFor='RegistrationForm__email'>
-                    Email <Required />
-                  </label>
                   <Input
                     name='email'
                     type='email'
                     required
-                    id='RegistrationForm__email'>
+                    id='RegistrationForm__email'
+                    placeHolder="Email(Required)"
+                    className="text">
                   </Input>
                 </div>
 
                 <div className='password'>
-                  <label htmlFor='RegistrationForm__password'>
-                    Password <Required />
-                  </label>
                   <Input
                     name='password'
                     type='password'
                     required
-                    id='RegistrationForm__password'>
+                    id='RegistrationForm__password'
+                    placeHolder="Password(Required)"
+                    className="text">
                   </Input>
                 </div>
 
-                <Button class="btn" type='submit'>
-                  Submit
+                <Button className="btn submit_btn" type='submit'>
+                  SUBMIT
               </Button>
-
               </form>
             </div>
-            <div />
-          </section></div>
-        )
-        }
-        
-      </NotificationConsumer>
+          </section>
+        </div>
+      </React.Fragment>
     );
   }
-
 }
 
 export default RegistrationForm;

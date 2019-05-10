@@ -1,19 +1,13 @@
 .side-drawer {
   height: 100%;
-  background: white;
+  background: black;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
-  left: 0;
   width: 70%;
   max-width: 400px;
   z-index: 200;
-  /* transform: translateX(-100%); */
-  transition: transform 0.3s ease-out;
-}
-
-.side-drawer.open {
-  transform: translateX(0);
+  color: white
 }
 
 .toggleNavUl{
@@ -25,13 +19,33 @@
 
 li{
     display:inline-block;
-    padding: 0 10px;
+    padding: 0;
 }
 
-.logo{
+.mbl-logo{
     text-align: left;
     padding: 0 15px;
     margin: 10px 0 0;
-    
+    color: black;
+    display: block;
 }
 
+.mbl-menu-user, .mbl-menu-user{
+  display:block;
+}
+
+.side-drawer{
+  text-align: left;
+}
+
+.mbl-ul{
+  padding-left: 15px;
+}
+
+a.login-logout.mbl-menu-links{
+text-decoration: none;
+}
+
+ a{
+  text-decoration: none;
+}

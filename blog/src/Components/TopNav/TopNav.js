@@ -1,63 +1,61 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HamburgerBtn from "../HamburgerBtn/HamburgerBtn";
-import Dropdown from "../Dropdown/Dropdown";
-import { Hyph } from '../Utils/Utils'
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
+import FeedContext from "../../contexts/FeedContext";
 import "./TopNav.css";
 
 class TopNav extends React.Component {
+
+  static contextType = FeedContext
+
+  // TopNav constructor
   constructor(props) {
     super(props);
     this.state = {
-      category: [
-        {
-          id: 0,
-          title: "Category",
-          selected: false,
-          key: "category"
-        },
-        {
-          id: 1,
-          title: "Category",
-          selected: false,
-          key: "category"
-        },
-        {
-          id: 2,
-          title: "Category",
-          selected: false,
-          key: "category"
-        }
-      ]
     };
   }
+  // End of TopNav constructor
 
+  // logout
+  handleLogoutClick = () => {
+    TokenService.clearAuthToken();
+    localStorage.clear();
+  }
+
+  // renders logout and create post links to <TopNav/> if user is logged in
   renderLogoutLink() {
     return (
-      <div className='Header__logged-in'>
-        <Link
-          onClick={this.handleLogoutClick}
-          to='/'>
-          Logout
-        </Link>
-        <Hyph />
+      <div className='Header__logged-in top-menu-link'>
         <Link
           to='/create_post'>
-          Create Post
+          <span style={{fontSize: `20px`}}>+</span>Post
+        </Link>
+
+        {/* <Link
+          to='/login'>
+          {localStorage.getItem('user')}
+        </Link> */}
+
+        <Link
+          className="login-logout"
+          onClick={this.handleLogoutClick}
+          to='/login'>
+          Logout
         </Link>
       </div>
     )
   }
 
+  // renders if user is  logged out
   renderLoginLink() {
     return (
-      <div className='Header__not-logged-in'>
+      <div className='Header__not-logged-in top-menu-link'>
         <Link
           to='/register'>
           Register
         </Link>
-        <Hyph />
+
         <Link
           to='/login'>
           Log in
@@ -66,49 +64,74 @@ class TopNav extends React.Component {
     )
   }
 
+  // attaches Blog link to ('/') if user is logged out
+  renderLandingLink() {
+    return (
+      <div className='Header__not-logged-in logo'>
+        <Link
+          to='/'>
+          Blog
+        </Link>
+      </div>
+    )
+  }
+
+  // attaches Blog link to ('/blogFeed') if user is logged in
+  renderBlogFeedLink() {
+    return (
+      <div className='Header__logged-in logo'>
+        <Link
+          to='/blogFeed'>
+          Blog
+        </Link>
+      </div>
+    )
+  }
+
   render() {
+
+    // returns TopNav html(JSX)
     return (
       <nav>
+
+        {/* nav-grid */}
         <div className="nav-grid">
+
+          {/* nav-grid item */}
           <div className="nav-grid-item">
-            <a className="navLinks">
-              <h1 className="logo">
-                <Link Link to="/">
-                  Blog
-                </Link>
-              </h1>
-            </a>
+
+            <h1 className="logo">
+
+              {/* attaches Blog Link to ('/blogFeed') if logged in, or to ('/') if else   */}
+              {TokenService.hasAuthToken()
+                ? this.renderBlogFeedLink()
+                : this.renderLandingLink()}
+
+            </h1>
+
           </div>
 
+          {/* nav-grid item */}
           <div className="nav-grid-item-2">
+
+            {/* Hamburger menu button renders when screen < 678px */}
             <HamburgerBtn click={this.props.hamburgerClick} />
-            <ul>
+
+            {/* Post Categories drop down */}
+            <ul className="top-ul">
+
+              {/*renders login and register links to <TopNav/> if user is  logged out*/}
               <li>
-                <Dropdown title="Select category" list={this.state.category} />
-              </li>
-              <li>
-                {/* <Link className="navLinks" to="/login">
-                  Login
-                </Link> */}
                 {TokenService.hasAuthToken()
                   ? this.renderLogoutLink()
                   : this.renderLoginLink()}
               </li>
-              
-              {/* <li>
-                <Link className="navLinks" to="/register">
-                  Register
-                </Link>
-              </li> */}
-              
-              <li>
-                <Link className="navLinks" to="/contact">
-                  Contact
-                </Link>
-              </li>
             </ul>
+            {/* End of Post Dropdown */}
+
           </div>
         </div>
+        {/* End of nav-grid */}
       </nav>
     );
   }

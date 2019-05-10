@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import ArticleContext from '../../contexts/ArticleContext'
+import FeedContext from '../../contexts/FeedContext'
 import ArticleApiService from '../../services/article-api-service'
 import { Button, Input, Required, Textarea } from '../Utils/Utils';
-// import './CommentForm.css'
 
 class PostForm extends Component {
-  static contextType = ArticleContext
+  static contextType = FeedContext
   static defaultProps = {
     onPostSuccess: () => { }
   }
-  
+
   state = { error: null }
 
   handleSubmit = ev => {
@@ -17,7 +16,7 @@ class PostForm extends Component {
     ev.preventDefault()
     const { title, image, content } = ev.target
     this.setState({ error: null })
-    // ArticleApiService.postPost(article.id, text.value)
+
     ArticleApiService.postPost({
       title: title.value,
       image: image.value,
@@ -40,31 +39,31 @@ class PostForm extends Component {
         className='CommentForm'
         onSubmit={this.handleSubmit}
       >
-      <div className='title'>
-                  <label htmlFor='PostForm__user_name'>
-                    Title <Required />
+        <div className='title'>
+          <label htmlFor='PostForm__user_name'>
+            Title <Required />
+          </label>
+          <Input
+            name='title'
+            type='text'
+            required
+            id='Post__title'>
+          </Input>
+        </div>
+        <div className='image'>
+          <label htmlFor='PostForm__image_url'>
+            Image
                   </label>
-                  <Input
-                    name='title'
-                    type='text'
-                    required
-                    id='Post__title'>
-                  </Input>
-                </div>
-                <div className='image'>
-                  <label htmlFor='PostForm__image_url'>
-                    Image
-                  </label>
-                  <Input
-                    name='image'
-                    type='text'
-                    id='Post__image'>
-                  </Input>
-                </div>
+          <Input
+            name='image'
+            type='text'
+            id='Post__image'>
+          </Input>
+        </div>
         <div className='content'>
-        <label htmlFor='PostForm__user_name'>
-                    Post Content <Required />
-                  </label>
+          <label htmlFor='PostForm__user_name'>
+            Post Content <Required />
+          </label>
           <Textarea
             required
             aria-label='Enter Post Text...'

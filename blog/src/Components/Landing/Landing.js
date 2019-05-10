@@ -17,7 +17,7 @@ class Landing extends React.Component {
               console. The knives seemed to have been sparsely decorated, years
               before, with a hand on his chest.{" "}
             </p>
-            <Link className="btn" Link to="/blogFeed">
+            <Link className="btn" to="/blogFeed">
               Go To Blog Posts
             </Link>
           </div>
@@ -36,7 +36,7 @@ class Landing extends React.Component {
           </p>
           </div>
           
-            <Link className="btn" Link to="/register">
+            <Link className="btn" to="/register">
               Click Here To Register
             </Link>
           </div>

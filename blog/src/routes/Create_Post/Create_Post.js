@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
 import PostForm from '../../Components/PostForm/PostForm';
 import { Section } from '../../Components/Utils/Utils';
-import NotificationProvider from "../../NotificationContext/NotificationContext";
-import Notification from "../../Components/Notifications/Notifications";
 
 class Create_Post extends React.Component {
   state = {
@@ -15,29 +13,26 @@ class Create_Post extends React.Component {
       push: () => { },
     },
   }
-
-  //message = 'Subscriber Created';
-
+  
+  //invoked after create post form input has been validated
   handlePostSuccess = subscriber => {
     alert('new user created')
     const { history } = this.props
     history.push('/blogFeed')
   }
 
-  updateMessage = () => {
-    console.log('xxx')
-  };
-
   render() {
     
     const context = { top: this.state.top, message: this.state.massage, updateMessage: this.state.updateMessage }
     
+    // return Create Post Component html(JSX)
     return (
+
+      // Beginning of page
       <Section className='RegistrationPage'>
         <h2>Create A Post</h2>
-        {/* <button onClick={() => this.fireAlert('Account Created')}>Registration Click</button> */}
         
-          {/* <Notification update={this.updateMessage} /> */}
+          {/* Blog post creation form component */}
           <PostForm
             onPostSuccess={this.handlePostSuccess}
           />

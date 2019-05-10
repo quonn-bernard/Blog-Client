@@ -1,31 +1,49 @@
 import React from 'react';
 import FeedContext from "../../contexts/FeedContext";
+import TokenService from '../../services/token-service';
+import { Link } from "react-router-dom";
 
 // functional component
 class AccountPanel extends React.Component {
-    
+    constructor(props) {
+        super(props)
+    }
     static contextType = FeedContext
     // return BlogPost component html/(JSX)
 
-    renderUserInfo(){
-        const user = this.context.user;
-        this.context.setUser('y')
-        console.log(this.context)
-        console.log(this.context.user)
+    renderGuest() {
+        return (
+            <Link
+                className="side-panel-content"
+                to='/create_post'>
+                <p >
+                    Guest
+                </p>
+            </Link>
+        )
     }
 
-    render(){
+    renderUser() {
         return (
-        
-            
+            <div
+                className="side-panel-content"
+                to={`/account/${localStorage.getItem('user')}`}>
+                <p >
+                    User: {localStorage.getItem('user')}
+                </p>
+            </div>
+        )
+    }
+
+    render() {
+        return (
             <section>
-                { this.renderUserInfo() }
-               AccountPanel
-    
+                {TokenService.hasAuthToken()
+                    ? this.renderUser()
+                    : this.renderGuest()}
             </section>
         )
     }
-    
 }
 
 export default AccountPanel;
