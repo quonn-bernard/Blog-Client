@@ -15,7 +15,7 @@ class ToggleNav extends React.Component {
 
   static contextType = NavContext
 
-  // renders logout and create post links to <TopNav/> if user is logged in
+  // renders logout and create post links to <TopNav/> if user is logged i
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
