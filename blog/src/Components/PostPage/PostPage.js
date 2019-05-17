@@ -33,6 +33,7 @@ export default class PostPage extends Component {
     renderPost() {
         const { post, comments = [] } = this.context
         return <>
+        
             <div className='' style={{ backgroundImage: `url(${post[4]})` }} />
             <h2>{post.title}</h2>
             <PostContent post={post.content}></PostContent>
@@ -54,8 +55,13 @@ export default class PostPage extends Component {
             content = this.renderPost()
         }
         return (
-            <Section className='PostPage'>
+            
+            <Section className='PostPage section section-grid'>
+            <div></div>
+      <div className="section-grid-item">
                 {content}
+                </div>
+                <div></div>
             </Section>
         )
     }
