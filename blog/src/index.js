@@ -8,7 +8,7 @@ import { FeedProvider } from "./contexts/FeedContext";
 import { PostProvider } from "./contexts/PostContext"; 
 import { NavProvider } from "./contexts/NavContext"; 
 
-ReactDOM.render(<FeedProvider><PostProvider><NavProvider><BrowserRouter><App /></BrowserRouter></NavProvider></PostProvider></FeedProvider>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><FeedProvider><PostProvider><NavProvider><App /></NavProvider></PostProvider></FeedProvider></BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

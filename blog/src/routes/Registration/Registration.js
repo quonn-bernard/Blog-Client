@@ -24,7 +24,6 @@ class Registration extends React.Component {
   }
 
   render() {
-    
     return (
       <Section className='RegistrationPage'>
         <h2>Sign Up Here, So You Never Miss A Post!</h2>

@@ -70,57 +70,48 @@ export default class LoginForm extends Component {
         // return LoginForm (JSX)html
         return (
             <React.Fragment>
-                <h2>Login</h2>
-                <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
-                <p>Username:"demo1234"</p>
-                <p>Pass:"Demo1234!"</p>
+                <section className="section section-grid">
+                    <div></div>
+                    <div className="section-grid-item">
+                        <h2>Login</h2>
+                        <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
+                        <p>Username:"demo1234"</p>
+                        <p>Pass:"Demo1234!"</p>
 
-                {/* LoginForm starts here */}
-                <form
-                    className='LoginForm'
-                    onSubmit={this.handleSubmitJwtAuth}
-                >
+                        <form id="contact-form"
+                            onSubmit={this.handleSubmitJwtAuth}>
+                            <div role='alert'>
+                                {error && <p className='red'>{error}</p>}
+                            </div>
+                            <div className='user_name'>
 
-                    {/* Errors */}
-                    <div role='alert'>
-                        {error && <p className='red'>{error}</p>}
+                                <Input
+                                    name='user_name'
+                                    id='LoginForm__user_name'
+                                    required
+                                    placeholder="Username(Required)">
+                                </Input>
+                            </div>
+
+                            <div className='password'>
+                                <Input
+                                    name='password'
+                                    type='password'
+                                    required
+                                    id='LoginForm__password'
+                                    placeholder="Password(Required)">
+                                </Input>
+                            </div>
+
+                            <Button className="btn submit_btn" type='submit'>
+                                SUBMIT
+                            </Button>
+                        </form>
+
                     </div>
+                </section>
+            </React.Fragment >
 
-                    {/* user_name label and input */}
-                    <div className='user_name'>
-                        {/* <label htmlFor='LoginForm__user_name'>
-                            User name
-                        </label> */}
-                        <Input
-                            name='user_name'
-                            id='LoginForm__user_name'
-                            required
-                            placeholder="Username(Required)">
-                        </Input>
-                    </div>
-
-                    {/* password label and input */}
-                    <div className='password'>
-                        {/* <label htmlFor='LoginForm__password'>
-                            Password
-                        </label> */}
-                        <Input
-                            name='password'
-                            type='password'
-                            required
-                            id='LoginForm__password'
-                            placeholder="Password(Required)">
-                        </Input>
-                    </div>
-
-                    {/* Submit form button */}
-                    <Button className="submit_btn" type='submit'>
-                        Login
-                    </Button>
-
-                </form>
-                {/* LoginForm ends here */}
-            </React.Fragment>
         )
     }
 }

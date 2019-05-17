@@ -1,5 +1,8 @@
+
 #banner {
+  height: 100%;
   text-align: center;
+  background-color: white;
 }
 #contact-form {
   width: 200px;
@@ -12,17 +15,25 @@
   margin-bottom: 15px;
   height: 35px;
 }
+  
+  Textarea{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 15px;
+    height: 35px;
+  }
 
 input[type="submit"] {
   border: none;
   box-shadow: none;
 }
 
-h3{
+h3 {
   margin-bottom: 30px;
 }
 
-button.Button.btn.submit_btn{
+button.Button.btn.submit_btn {
   width: 100%;
 }
 
@@ -34,8 +45,23 @@ button.Button.btn.submit_btn{
   height: 35px;
 }
 
+.landing-btns-box {
+  padding: 30px 15px;
+}
+
+.landing-btns-box > a.btn {
+  display: block;
+  margin-bottom: 20px;
+  max-width: 200px;
+  margin: 15px auto;
+}
+
 @media screen and (min-width: 678px) {
   #contact-form input {
+    max-width: 300px;
+  }
+
+  Textarea{
     max-width: 300px;
   }
 

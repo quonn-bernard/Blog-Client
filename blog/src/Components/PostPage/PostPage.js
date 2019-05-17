@@ -3,7 +3,7 @@ import PostContext from '../../contexts/PostContext'
 import ArticleApiService from '../../services/article-api-service'
 import { Section } from '../Utils/Utils'
 import Comment from '../Comment/Comment'
-import "./PostPage.css"
+
 
 export default class PostPage extends Component {
 

@@ -112,14 +112,6 @@ class ToggleNav extends React.Component {
                 {TokenService.hasAuthToken()
                   ? this.renderLogoutLink()
                   : this.renderLoginLink()}
-
-                <div >
-                  <Link
-                    style={{ display: `block`, color: `white` }}
-                    to="/contact">
-                    Contact
-                  </Link>
-                </div>
               </li>
             </ul>
             {/* End of Post Dropdown */}

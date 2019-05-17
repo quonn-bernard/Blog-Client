@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "qber83-qb-blog",
+    "name": "qb-blog",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+  }

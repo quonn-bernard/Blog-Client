@@ -35,10 +35,6 @@ class App extends React.Component {
     this.drawerToggleClickHandler();
   };
 
-  logout() {
-    console.log('logout');
-  }
-
   render() {
     let toggleNav;
     let backdrop;

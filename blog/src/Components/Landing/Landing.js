@@ -9,36 +9,22 @@ class Landing extends React.Component {
         <section id="banner" className="section section-grid">
           <div className="section-grid-item" />
           <div className="section-grid-item">
-            <h1>Welcome To The Capstone Blog</h1>
-            
+            <h1>Standard Blog</h1>
             <p>
-              That was Wintermute, manipulating the lock the way it had
-              manipulated the drone micro and the chassis of a gutted game
-              console. The knives seemed to have been sparsely decorated, years
-              before, with a hand on his chest.{" "}
+              Registered users can create and comment on all videos in the blogfeed.
             </p>
-            <Link className="btn" to="/blogFeed">
-              Go To Blog Posts
+            <div className="landing-btns-box">
+              <Link className="btn" to="/blogFeed">
+                Go To Blog Posts
             </Link>
-          </div>
+            <Link className="btn" to="/login">
+                Login as a Guest
+            </Link>
+              <Link className="btn" to="/register">
+                Click Here To Register
+            </Link>
+            </div>
 
-          <div className="section-grid-item" />
-        </section>
-        <section className="section section-grid grey-bg ">
-        <div className="section-grid-item" />
-        
-        
-          <div className="section-grid-item">
-          <div>
-          <h3>Subcribe Below, To Get New Post Alerts, Video Alerts, And More!!!</h3>
-          <p>
-            
-          </p>
-          </div>
-          
-            <Link className="btn" to="/register">
-              Click Here To Register
-            </Link>
           </div>
           <div className="section-grid-item" />
         </section>

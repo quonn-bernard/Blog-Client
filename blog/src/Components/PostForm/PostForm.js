@@ -35,35 +35,46 @@ class PostForm extends Component {
 
   render() {
     return (
-      <form
-        className='CommentForm'
-        onSubmit={this.handleSubmit}
-      >
-        <div className='title'>
-          <label htmlFor='PostForm__user_name'>
-            Title <Required />
-          </label>
-          <Input
-            name='title'
-            type='text'
-            required
-            id='Post__title'>
-          </Input>
-        </div>
-        <div className='image'>
-          <label htmlFor='PostForm__image_url'>
-            Image
-                  </label>
-          <Input
-            name='image'
-            type='text'
-            id='Post__image'>
-          </Input>
-        </div>
-        <div className='content'>
-          <label htmlFor='PostForm__user_name'>
-            Post Content <Required />
-          </label>
+
+      <React.Fragment>
+        <section className="section section-grid">
+          <div></div>
+          <div className="section-grid-item">
+            {/* <h2>Login</h2>
+            <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
+            <p>Username:"demo1234"</p>
+            <p>Pass:"Demo1234!"</p> */}
+
+            <form id="contact-form"
+              className='CommentForm'
+              onSubmit={this.handleSubmit}>
+              <div role='alert'>
+                {/* {error && <p className='red'>{error}</p>} */}
+              </div>
+              <div className='title'>
+                
+                <Input
+                  name='title'
+                  type='text'
+                  required
+                  id='Post__title'
+                  placeholder="Title"
+                >
+                </Input>
+              </div>
+
+              <div className='image'>
+              
+                <Input
+                  name='image'
+                  type='text'
+                  id='Post__image'
+                  placeholder="Image"
+                  >
+                </Input>
+              </div>
+              <div className='content'>
+          
           <Textarea
             required
             aria-label='Enter Post Text...'
@@ -74,10 +85,14 @@ class PostForm extends Component {
             placeholder='Enter Post Text...'>
           </Textarea>
         </div>
-        <Button class="btn" type='submit'>
-          Submit Post
-        </Button>
-      </form>
+              <Button className="btn submit_btn" type='submit'>
+                SUBMIT
+                            </Button>
+            </form>
+
+          </div>
+        </section>
+      </React.Fragment >
     )
   }
 }
