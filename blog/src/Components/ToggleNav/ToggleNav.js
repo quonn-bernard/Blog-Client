@@ -26,8 +26,8 @@ class ToggleNav extends React.Component {
 
         <Link
           className="mbl-menu-links"
-          to='/create_post'>
-          <p style={{ display: `block`, marginBottom: `10px`, color: "white" }}><span style={{ fontSize: `20px` }}>+</span>Post</p>
+          to='/blogFeed'>
+          <p style={{ display: `block`, marginBottom: `10px`, color: "white" }}>Bookmarks</p>
         </Link>
 
         <Link
@@ -45,6 +45,12 @@ class ToggleNav extends React.Component {
   renderLoginLink() {
     return (
       <div className='Header__not-logged-in'>
+
+        <Link
+          to='/blogFeed'>
+          Bookmarks
+        </Link>
+
         <Link
           style={{ display: `block`, marginBottom: `10px`, color: "white" }}
           className="mbl-menu-links"
@@ -69,7 +75,7 @@ class ToggleNav extends React.Component {
         <Link
           style={{ color: "white" }}
           to='/'>
-          Blog
+          Video Finder
         </Link>
       </div>
     )
@@ -82,7 +88,7 @@ class ToggleNav extends React.Component {
         <Link
           style={{ color: "white" }}
           to='/blogFeed'>
-          Blog
+          Video Finder
         </Link>
       </div>
     )

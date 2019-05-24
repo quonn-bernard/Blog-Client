@@ -94,7 +94,7 @@ class RegistrationForm extends React.Component {
                 </div>
 
                 <Button className="btn submit_btn" type='submit'>
-                  SUBMIT
+                  Register
               </Button>
               </form>
             </div>

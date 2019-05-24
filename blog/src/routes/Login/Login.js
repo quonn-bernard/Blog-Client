@@ -16,6 +16,7 @@ class Login extends Component {
 
   // Fires success messages and re-routes user to blogfeed
   handleLoginSuccess = () => {
+alert("Logged in successfully")
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/blogFeed'
     history.push(destination)
@@ -27,7 +28,6 @@ class Login extends Component {
     // returns LoginPage html(JSX)
     return (
       <Section className='LoginPage'>
-      
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />

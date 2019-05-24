@@ -4,7 +4,6 @@ import ArticleApiService from '../../services/article-api-service'
 import { Section } from '../Utils/Utils'
 import Comment from '../Comment/Comment'
 
-
 export default class PostPage extends Component {
 
     static defaultProps = {
@@ -31,14 +30,25 @@ export default class PostPage extends Component {
     }
 
     renderPost() {
-        const { post, comments = [] } = this.context
+        const style = {
+            textAlign: "left"
+        }
+        const { post = [] } = this.context
         return <>
-        
-            <div className='' style={{ backgroundImage: `url(${post[4]})` }} />
-            <h2>{post.title}</h2>
-            <PostContent post={post.content}></PostContent>
-                <PostComments comments={comments}></PostComments>
-            <Comment />
+
+            <iframe
+                width="85%"
+                height="500"
+                src={post.image}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            >
+            </iframe>
+            <section style={style}>
+                <h2>"{post.title}"</h2>
+                <PostContent post={post.content}></PostContent>
+            </section>
         </>
     }
 
@@ -55,11 +65,11 @@ export default class PostPage extends Component {
             content = this.renderPost()
         }
         return (
-            
-            <Section className='PostPage section section-grid'>
-            <div></div>
-      <div className="section-grid-item">
-                {content}
+
+            <Section className='PostPage section '>
+                <div></div>
+                <div className="section-grid-item">
+                    {content}
                 </div>
                 <div></div>
             </Section>
@@ -78,9 +88,9 @@ function PostContent({ post }) {
 function PostComments({ comments = [] }) {
     return (
         <ul>
-                {comments.map(comment => {
-                   return <p key={comment.id}>{comment.text}</p>
-                })}
+            {comments.map(comment => {
+                return <p key={comment.id}>{comment.text}</p>
+            })}
         </ul>
     )
 }

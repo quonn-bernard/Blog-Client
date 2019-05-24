@@ -13,6 +13,12 @@ const ArticleApiService = {
           : res.json()
       )
   },
+  getVideos(term) {
+    console.log(term)
+    console.log(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=${term}&key=AIzaSyD4o_IgejuaXmtd-fhZ6sHxOIKKp468Xqs`);
+
+    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=${term}&key=AIzaSyD4o_IgejuaXmtd-fhZ6sHxOIKKp468Xqs`)
+  },
   getPost(postId) {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       headers: {
@@ -58,7 +64,7 @@ const ArticleApiService = {
 
   // This is a call to the server at localhost:8000/api/users to add new user to DB
   postPost(post) {
-  
+   console.log(post)
     return fetch (`${config.API_ENDPOINT}/posts`, {
       method: 'POST',
       headers: {

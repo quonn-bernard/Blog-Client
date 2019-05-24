@@ -4,7 +4,7 @@ nav {
 }
 .nav-grid {
   display: grid;
-  grid-template-columns: 20% 75%;
+  grid-template-columns: 60% 35%;
 }
 
 .nav-grid-item-2 {
@@ -51,7 +51,10 @@ link {
 }
 
 @media screen and (min-width: 678px) {
-  
+  .nav-grid {
+    display: grid;
+    grid-template-columns: 20% 75%;
+  }
   .logo {
     margin: 10px 0 5px;
   }

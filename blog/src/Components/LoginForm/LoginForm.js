@@ -5,6 +5,7 @@ import AuthApiService from '../../services/auth-api-service'
 import FeedContext from "../../contexts/FeedContext";
 import Notification from "../Notifications/Notifications";
 import "./LoginForm.css";
+
 export default class LoginForm extends Component {
 
     static contextType = FeedContext
@@ -28,7 +29,7 @@ export default class LoginForm extends Component {
         //deconstruct form values into variables
         const { user_name, password } = ev.target;
 
-        this.context.notification()
+        //this.context.notification()
 
         this.context.setUser(user_name.value);
 
@@ -55,10 +56,6 @@ export default class LoginForm extends Component {
             .catch(res => {
                 this.setState({ error: res.error });
             });
-    }
-
-    populateFormWithDemo = () => {
-
     }
 
     // render LoginForm component

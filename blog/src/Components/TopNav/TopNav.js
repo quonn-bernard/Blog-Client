@@ -19,6 +19,7 @@ class TopNav extends React.Component {
 
   // logout
   handleLogoutClick = () => {
+    alert("Logged Out Successfully!!!")
     TokenService.clearAuthToken();
     localStorage.clear();
   }
@@ -28,8 +29,8 @@ class TopNav extends React.Component {
     return (
       <div className='Header__logged-in top-menu-link'>
         <Link
-          to='/create_post'>
-          <span style={{fontSize: `20px`}}>+</span>Post
+          to='/blogFeed'>
+          Bookmarks
         </Link>
 
         {/* <Link
@@ -52,6 +53,11 @@ class TopNav extends React.Component {
     return (
       <div className='Header__not-logged-in top-menu-link'>
         <Link
+          to='/blogFeed'>
+          Bookmarks
+        </Link> 
+        
+        <Link
           to='/register'>
           Register
         </Link>
@@ -70,7 +76,7 @@ class TopNav extends React.Component {
       <div className='Header__not-logged-in logo'>
         <Link
           to='/'>
-          Blog
+          Video Finder
         </Link>
       </div>
     )
@@ -82,7 +88,7 @@ class TopNav extends React.Component {
       <div className='Header__logged-in logo'>
         <Link
           to='/blogFeed'>
-          Blog
+          Video Finder
         </Link>
       </div>
     )

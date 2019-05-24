@@ -6,19 +6,24 @@ const FeedContext = React.createContext({
   error: null,
   top: '',
   message: '',
-  setError: () => {},
-  clearError: () => {},
-  setFeed: () => {},
-  setUser: () => {},
-  updatePosition: () => {},
-  setCurrentUserPosts: () => {}
+  post: '',
+  results: [],
+  setError: () => { },
+  clearError: () => { },
+  setFeed: () => { },
+  setUser: () => { },
+  updatePosition: () => { },
+  setCurrentUserPosts: () => { },
+  setPost: () => { },
+  clearPost: () => {},
+  setResults: () => {}
 })
 
 export default FeedContext
 
 export class FeedProvider extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     window.sessionStorage.getItem("user");
   }
 
@@ -28,7 +33,9 @@ export class FeedProvider extends Component {
     user: 'Guest',
     top: -99,
     message: "NO MESSAGE HAS BEEN SET",
-    c_u_posts: []
+    c_u_posts: [],
+    post: '',
+    results: [] 
   };
 
   updatePosition = () => {
@@ -50,9 +57,9 @@ export class FeedProvider extends Component {
   setFeed = feed => {
     this.setState({ feed })
   }
+  
 
   setError = error => {
-
     console.error()
     this.setState({ error })
   }
@@ -70,6 +77,22 @@ export class FeedProvider extends Component {
     this.setState({ c_u_posts })
   }
 
+  setPost = post => {
+    console.log('Setting Feed Context post')
+    console.log(post)
+    this.setState({ post })
+  }
+
+  clearPost = () => {
+    console.log('Clear Post Context post')
+    this.setPost()
+    // this.setComments([])
+  }
+
+  setResults = results => {
+    this.setState({results})
+  }
+
   render() {
     const value = {
       feed: this.state.feed,
@@ -84,7 +107,12 @@ export class FeedProvider extends Component {
       notification: this.updatePosition,
       setMessage: this.setMessage,
       setCurrentUserPosts: this.setCurrentUserPosts,
-      c_u_posts: this.state.c_u_posts
+      c_u_posts: this.state.c_u_posts,
+      setPost: this.setPost,
+      clearPost: this.clearPost,
+      setResults: this.setResults,
+      post: this.state.post,
+      results: this.state.results
     }
 
     return (
@@ -94,4 +122,3 @@ export class FeedProvider extends Component {
     )
   }
 }
-       

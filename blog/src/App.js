@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Link, Redirect } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
 import TopNav from "./Components/TopNav/TopNav";
 import Landing from "./Components/Landing/Landing";
@@ -6,12 +7,14 @@ import Contact from "./Components/Contact/Contact";
 import ToggleNav from "./Components/ToggleNav/ToggleNav";
 import Backdrop from "./Components/Backdrop/Backdrop";
 import PostPage from "./Components/PostPage/PostPage";
+import ResultPage from "./Components/ResultPage/ResultPage";
 import SubscriberPage from "./Components/SubscriberPage/SubscriberPage";
 import BlogFeed from "./routes/BlogFeed/BlogFeed";
 import Registration from "./routes/Registration/Registration";
 import Login from "./routes/Login/Login";
 import Create_Post from "./routes/Create_Post/Create_Post";
 import PageNotFound from "./routes/PageNotFound/PageNotFound";
+import TokenService from './services/token-service';
 import "./App.css";
 
 class App extends React.Component {
@@ -43,6 +46,10 @@ class App extends React.Component {
       toggleNav = <ToggleNav />;
       backdrop = <Backdrop backdropClick={this.backdropClickHandler} />;
     }
+     
+    const PrivateRoute = ({ component: Component}) => (
+      <Route render={() => (TokenService.hasAuthToken() ? <Component/> : <Redirect to='/login' /> )}  />
+    )
 
     return (
 
@@ -56,9 +63,10 @@ class App extends React.Component {
             <Route path={"/blogFeed"} component={BlogFeed} />
             <Route path={"/login"} component={Login} />
             <Route path={"/register"} component={Registration} />
-            <Route path={"/create_post"} component={Create_Post} />
+            <PrivateRoute path={"/create_post"} component={Create_Post} />
             <Route path={"/contact"} component={Contact} />
             <Route exact path={"/post/:postId"} render={props => <PostPage {...props}/>}/>
+            <Route exact path={"/result/:resultId"} render={props => <ResultPage {...props}/>}/>
             <Route exact path={"/account/:username"} render={props => <SubscriberPage {...props}/>}/>
             <Route component={PageNotFound}/>
           </Switch>

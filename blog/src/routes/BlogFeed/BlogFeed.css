@@ -4,10 +4,6 @@
   justify-content: center;
 }
 
-.feed-container {
-  padding: 30px;
-}
-
 .feed-grid {
   display: grid;
   grid-template-columns: 1fr 85% 1fr;
@@ -34,7 +30,10 @@
 }
 
 @media screen and (min-width: 687px) {
-
+  .feed-container {
+    padding: 30px;
+  }
+  
   .container {
     padding: 2px 16px;
   }
