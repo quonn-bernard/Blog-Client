@@ -15,7 +15,7 @@ class TopNav extends React.Component {
     this.state = {
     };
   }
-  // End of TopNav constructor
+  // End of TopNav constructo
 
   // logout
   handleLogoutClick = () => {
