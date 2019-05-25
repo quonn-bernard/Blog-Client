@@ -9,7 +9,6 @@ class AccountPanel extends React.Component {
         super(props)
     }
     static contextType = FeedContext
-    // return BlogPost component html/(JSX)
 
     renderGuest() {
         return (
