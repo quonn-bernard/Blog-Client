@@ -1,0 +1,14 @@
+.Footer{
+    height: auto;
+    background: black;
+    color: white;
+    text-align: left;
+    padding: 10px 8%;
+    bottom: 0;
+}
+
+.fixedBottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
