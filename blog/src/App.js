@@ -9,6 +9,7 @@ import Backdrop from "./Components/Backdrop/Backdrop";
 import PostPage from "./Components/PostPage/PostPage";
 import ResultPage from "./Components/ResultPage/ResultPage";
 import SubscriberPage from "./Components/SubscriberPage/SubscriberPage";
+import Footer from "./Components/Footer/Footer";
 import BlogFeed from "./routes/BlogFeed/BlogFeed";
 import Registration from "./routes/Registration/Registration";
 import Login from "./routes/Login/Login";
@@ -70,6 +71,7 @@ class App extends React.Component {
             <Route exact path={"/account/:username"} render={props => <SubscriberPage {...props}/>}/>
             <Route component={PageNotFound}/>
           </Switch>
+          <Footer></Footer>
         </main>
       </div>
     );

@@ -27,6 +27,7 @@
 .logo {
   text-decoration: none;
   color: white;
+  display: inline-block;
 }
 
 .navLinks:hover,
@@ -34,6 +35,13 @@
   color: salmon;
 }
 
+.mbl-yt-frame{
+  display: block;
+}
+
+.yt-frame{
+  display: none;
+}
 /* Classes */
 
 .section {
@@ -42,7 +50,7 @@
 
 .section-grid {
   display: grid;
-  grid-template-columns: auto 65% auto;
+  grid-template-columns: auto 85% auto;
 }
 
 .grey-bg {
@@ -61,28 +69,18 @@
 .section-grid-item {
   text-align: center;
   padding: 15px 0;
-  margin: auto;
+  /* margin: auto; */
 }
 
-input{
-  
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border: 1px solid lightGray;
-    padding: 5px 10px;
-    font-size: 20px;
-  };
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border-style: solid;
+  border: 1px solid lightGray;
+  padding: 5px 10px;
+  font-size: 20px;
+}
 
 .flexed {
   display: flex;
@@ -90,10 +88,25 @@ input{
   justify-content: center;
 }
 
-.green-border{
+.green-border {
   border: 1px solid green;
 }
 
-.full-width{
+.full-width {
   width: 100%;
+}
+
+@media screen and (min-width: 687px) {
+  
+}
+
+@media screen and (min-width: 992px) {
+  .mbl-yt-frame{
+    display: none;
+  }
+  
+  .yt-frame{
+    display: block;
+  }
+
 }
