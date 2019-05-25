@@ -18,7 +18,6 @@ export default class ResultPage extends Component {
         },
     }
 
-
     static contextType = FeedContext
 
     componentDidMount() {
@@ -42,7 +41,6 @@ export default class ResultPage extends Component {
         }
         const { title, image, content, rating } = ev.target
         this.setState({ error: null })
-        // console.log(title.value, this.context.post, content.value, rating.value)
 
         ArticleApiService.postPost({
             title: title.value,
@@ -59,8 +57,9 @@ export default class ResultPage extends Component {
             .catch(res => {
                 this.setState({ error: res.error })
             })
+            
         alert("Post Created Successfully!")
-        
+
         const { location, history } = this.props
         const destination = (location.state || {}).from || '/blogFeed'
         history.push(destination)
@@ -126,7 +125,7 @@ export default class ResultPage extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div role='alert'>
-                        {/* {error && <p className='red'>{error}</p>} */}
+    
                     </div>
                     <div className='title'>
 

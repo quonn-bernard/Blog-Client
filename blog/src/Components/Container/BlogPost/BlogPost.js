@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { RatingStars } from '../../RatingStars/RatingStars'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './BlogPost.css'
-import { Z_BLOCK } from 'zlib';
-import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants';
+import { faLink } from '@fortawesome/free-solid-svg-icons'
+
 
 export default class PostListItem extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class PostListItem extends Component {
   }
 
   render() {
+    const FaLink = <FontAwesomeIcon icon={faLink} className="link"/>
     const { post } = this.props
     const h2style = {
       marginTop: "0",
@@ -30,15 +32,13 @@ export default class PostListItem extends Component {
 
     post.image === ""
       ? this.state.image = "https://picsum.photos/300"
-      // : this.state.image = post.snippet.thumbnails.high.url
       : this.state.image = post.image
-    // console.log(post.snippett)
     return (
 
       <section className="postBox">
         <iframe
           width="100%"
-          height="315"
+          height="250px"
           src={post.image}
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -47,7 +47,7 @@ export default class PostListItem extends Component {
         <Link className="" to={`/post/${post.id}`} >
 
           <h2 style={h2style}>"{post.title}"</h2> <RatingStars rating={post.rating} />
-          <h3 style={{ "margin": "15px 0", textDecoration: "underline", color: "black" }}>Vist post page</h3>
+          <p><i style={{ "margin": "15px 0", color: "black", cursor: "pointer" }}>{FaLink} Vist Bookmark Page</i></p>
         </Link>
         {/* <Link className="BlogPostListedItem" to={`/post/${post.id}`} > */}
         {/* <div className='BlogPostListed__image' style={{backgroundImage: `url(${this.state.image})`}} /> */}

@@ -4,7 +4,7 @@ nav {
 }
 .nav-grid {
   display: grid;
-  grid-template-columns: 60% 35%;
+  grid-template-columns: 20% 80%;
 }
 
 .nav-grid-item-2 {
@@ -26,10 +26,10 @@ li {
 
 .logo > a {
   text-align: left;
-    padding: 7px 0 2px;
-    margin: -1px -10px 5px;
-    color: white;
-    text-decoration: none;
+  padding: 7px 0 2px;
+  margin: -1px -10px 5px;
+  color: white;
+  text-decoration: none;
 }
 
 .top-menu-link > a {
@@ -46,6 +46,15 @@ link {
   color: white;
 }
 
+.bookmark {
+  color: red;
+  font-size: 24px;
+  display: inline;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
 .logo > a:hover {
   color: salmon;
 }
@@ -53,14 +62,19 @@ link {
 @media screen and (min-width: 678px) {
   .nav-grid {
     display: grid;
-    grid-template-columns: 20% 75%;
+    grid-template-columns: 20% 76%;
   }
   .logo {
     margin: 10px 0 5px;
   }
 }
 
-@media screen and (min-width: 880px){
+@media screen and (min-width: 880px) {
+  .bookmark {
+    color: red;
+    font-size: 30px;
+    margin-top: 15px;
+  }
   .top-ul {
     display: block;
   }

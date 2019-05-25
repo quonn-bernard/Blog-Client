@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import HamburgerBtn from "../HamburgerBtn/HamburgerBtn";
 import TokenService from '../../services/token-service';
 import FeedContext from "../../contexts/FeedContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import "./TopNav.css";
 
 class TopNav extends React.Component {
@@ -26,6 +28,7 @@ class TopNav extends React.Component {
 
   // renders logout and create post links to <TopNav/> if user is logged in
   renderLogoutLink() {
+
     return (
       <div className='Header__logged-in top-menu-link'>
         <Link
@@ -55,8 +58,8 @@ class TopNav extends React.Component {
         <Link
           to='/blogFeed'>
           Bookmarks
-        </Link> 
-        
+        </Link>
+
         <Link
           to='/register'>
           Register
@@ -76,7 +79,7 @@ class TopNav extends React.Component {
       <div className='Header__not-logged-in logo'>
         <Link
           to='/'>
-          Video Finder
+          Video BookMarker
         </Link>
       </div>
     )
@@ -88,14 +91,14 @@ class TopNav extends React.Component {
       <div className='Header__logged-in logo'>
         <Link
           to='/blogFeed'>
-          Video Finder
+          Video BookMarker
         </Link>
       </div>
     )
   }
 
   render() {
-
+    const bookmark = <FontAwesomeIcon icon={faBookmark} className="bookmark" />
     // returns TopNav html(JSX)
     return (
       <nav>
@@ -105,15 +108,17 @@ class TopNav extends React.Component {
 
           {/* nav-grid item */}
           <div className="nav-grid-item">
+            <Link to={'/'}>
+              <h1 style={{ display: "inline" }}>{bookmark}</h1>
+            </Link>
 
-            <h1 className="logo">
-
-              {/* attaches Blog Link to ('/blogFeed') if logged in, or to ('/') if else   */}
-              {TokenService.hasAuthToken()
+            {/* <h1 className="logo"> */}
+            {/* attaches Blog Link to ('/blogFeed') if logged in, or to ('/') if else   */}
+            {/* {TokenService.hasAuthToken()
                 ? this.renderBlogFeedLink()
-                : this.renderLandingLink()}
+                : this.renderLandingLink()} */}
 
-            </h1>
+            {/* </h1> */}
 
           </div>
 

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import NavContext from "../../contexts/NavContext";
 import TokenService from '../../services/token-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import './ToggleNav.css'
 
 // functional component
@@ -43,24 +45,30 @@ class ToggleNav extends React.Component {
 
   // renders if user is  logged out
   renderLoginLink() {
+    const linkStyle = {
+      
+    }
     return (
       <div className='Header__not-logged-in'>
 
         <Link
-          to='/blogFeed'>
+          to='/blogFeed'
+          className="mbl-links"
+          style={linkStyle}
+          >
           Bookmarks
         </Link>
 
         <Link
-          style={{ display: `block`, marginBottom: `10px`, color: "white" }}
-          className="mbl-menu-links"
+          style={linkStyle}
+          className="mbl-links"
           to='/register'>
           Register
         </Link>
 
         <Link
-          style={{ color: "white" }}
-          className="mbl-menu-links"
+          style={linkStyle}
+          className="mbl-links"
           to='/login'>
           Log in
         </Link>
@@ -70,12 +78,11 @@ class ToggleNav extends React.Component {
 
   // attaches Blog link to ('/') if user is logged out
   renderLandingLink() {
+    const bookmark = <FontAwesomeIcon icon={faBookmark} className="bookmark" />
     return (
       <div className='Header__not-logged-in mbl-logo mbl-menu-links'>
-        <Link
-          style={{ color: "white" }}
-          to='/'>
-          Video Finder
+        <Link to={'/'}>
+          <h1 style={{ display: "inline" }}>{bookmark}</h1>
         </Link>
       </div>
     )

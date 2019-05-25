@@ -1,33 +1,33 @@
-.active{
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 0 15px;
-    background: black;
-    color: white;
-    box-shadow: 1px 1px 1px #999;
+.active {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 15px;
+  background: black;
+  color: white;
+  box-shadow: 1px 1px 1px #999;
 }
 
-li.tab-list-item{
-    padding: 8px 8px 9px;
-    border: .5px solid #999;
-    border-radius: 5px;
+li.tab-list-item {
+  padding: 8px 8px 9px;
+  border: 0.5px solid #999;
+  border-radius: 5px;
 }
 
 ol {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    padding-left: 0;
-    margin-left: 0;
-    width: auto;
-    display: inline-flex;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  margin-left: 0;
+  width: auto;
+  display: inline-flex;
 }
 
 /* padding: 12px 12px 13px; */
 
 @media screen and (min-width: 687px) {
-    ol {
-        margin-bottom: 30px;
-        margin-top: 0;
-    }
+  ol {
+    margin-bottom: 20px;
+    margin-top: 5px;
   }
+}

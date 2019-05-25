@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PostContext from '../../contexts/PostContext'
 import ArticleApiService from '../../services/article-api-service'
 import { Section } from '../Utils/Utils'
-import Comment from '../Comment/Comment'
+import { RatingStars } from '../RatingStars/RatingStars'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "../../App.css"
 
 export default class PostPage extends Component {
 
@@ -33,22 +35,34 @@ export default class PostPage extends Component {
         const style = {
             textAlign: "left"
         }
+        
         const { post = [] } = this.context
         return <>
-
-            <iframe
-                width="85%"
-                height="500"
-                src={post.image}
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            >
-            </iframe>
-            <section style={style}>
-                <h2>"{post.title}"</h2>
-                <PostContent post={post.content}></PostContent>
-            </section>
+                <iframe
+                    className="mbl-yt-frame"
+                    width="100%"
+                    height="250"
+                    src={post.image}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                >
+                </iframe>
+                <iframe
+                    className="yt-frame"
+                    width="100%"
+                    height="400"
+                    src={post.image}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                >
+                </iframe>
+                <section style={style}>
+                    <h2>"{post.title}"</h2>
+                    <RatingStars rating={post.rating} />
+                    <PostContent post={post.content}></PostContent>
+                </section>
         </>
     }
 
@@ -66,7 +80,7 @@ export default class PostPage extends Component {
         }
         return (
 
-            <Section className='PostPage section '>
+            <Section className='PostPage section section-grid '>
                 <div></div>
                 <div className="section-grid-item">
                     {content}
