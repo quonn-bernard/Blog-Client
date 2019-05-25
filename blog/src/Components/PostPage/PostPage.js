@@ -80,9 +80,9 @@ export default class PostPage extends Component {
         }
         return (
 
-            <Section className='PostPage section section-grid '>
+            <Section className='PostPage section post-page-grid '>
                 <div></div>
-                <div className="section-grid-item">
+                <div className="post-page-grid-item">
                     {content}
                 </div>
                 <div></div>
