@@ -18,7 +18,7 @@ class Login extends Component {
   handleLoginSuccess = () => {
 alert("Logged in successfully")
     const { location, history } = this.props
-    const destination = (location.state || {}).from || '/blogFeed'
+    const destination = (location.state || {}).from || '/bmFeed'
     history.push(destination)
   }
 

@@ -28,7 +28,7 @@ class ToggleNav extends React.Component {
 
         <Link
           className="mbl-menu-links"
-          to='/blogFeed'>
+          to='/bmFeed'>
           <p style={{ display: `block`, marginBottom: `10px`, color: "white" }}>Bookmarks</p>
         </Link>
 
@@ -52,7 +52,7 @@ class ToggleNav extends React.Component {
       <div className='Header__not-logged-in'>
 
         <Link
-          to='/blogFeed'
+          to='/bmFeed'
           className="mbl-links"
           style={linkStyle}
           >
@@ -88,13 +88,13 @@ class ToggleNav extends React.Component {
     )
   }
 
-  // attaches Blog link to ('/blogFeed') if user is logged in
+  // attaches Blog link to ('/bmFeed') if user is logged in
   renderBlogFeedLink() {
     return (
       <div className='Header__logged-in mbl-logo'>
         <Link
           style={{ color: "white" }}
-          to='/blogFeed'>
+          to='/bmFeed'>
           Video Finder
         </Link>
       </div>
@@ -111,7 +111,7 @@ class ToggleNav extends React.Component {
           {/* nav-grid item */}
           <div className="">
             <h1 className="logo mbl-menu-links">
-              {/* attaches Blog Link to ('/blogFeed') if logged in, or to ('/') if else   */}
+              {/* attaches Blog Link to ('/bmFeed') if logged in, or to ('/') if else   */}
               {TokenService.hasAuthToken()
                 ? this.renderBlogFeedLink()
                 : this.renderLandingLink()}

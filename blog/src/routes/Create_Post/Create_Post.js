@@ -18,7 +18,7 @@ class Create_Post extends React.Component {
   handlePostSuccess = subscriber => {
     alert('new user created')
     const { history } = this.props
-    history.push('/blogFeed')
+    history.push('/bmFeed')
   }
 
   render() {

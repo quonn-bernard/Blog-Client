@@ -28,7 +28,7 @@ class Landing extends React.Component {
               The DEMO credentials are username: "demo1234" password: "Demo1234!"; Signing in will give users the ability to add bookmarks to the "feed".
             </p>
             <div className="landing-btns-box">
-              <Link className="btn" to="/blogFeed">
+              <Link className="btn" to="/bmFeed">
                 {searchGlass} Find Tutorials
             </Link>
               <Link className="btn" to="/login">

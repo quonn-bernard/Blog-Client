@@ -32,7 +32,7 @@ class TopNav extends React.Component {
     return (
       <div className='Header__logged-in top-menu-link'>
         <Link
-          to='/blogFeed'>
+          to='/bmFeed'>
           Bookmarks
         </Link>
 
@@ -56,7 +56,7 @@ class TopNav extends React.Component {
     return (
       <div className='Header__not-logged-in top-menu-link'>
         <Link
-          to='/blogFeed'>
+          to='/bmFeed'>
           Bookmarks
         </Link>
 
@@ -85,12 +85,12 @@ class TopNav extends React.Component {
     )
   }
 
-  // attaches Blog link to ('/blogFeed') if user is logged in
+  // attaches Blog link to ('/bmFeed') if user is logged in
   renderBlogFeedLink() {
     return (
       <div className='Header__logged-in logo'>
         <Link
-          to='/blogFeed'>
+          to='/bmFeed'>
           Video BookMarker
         </Link>
       </div>
@@ -113,7 +113,7 @@ class TopNav extends React.Component {
             </Link>
 
             {/* <h1 className="logo"> */}
-            {/* attaches Blog Link to ('/blogFeed') if logged in, or to ('/') if else   */}
+            {/* attaches Blog Link to ('/bmFeed') if logged in, or to ('/') if else   */}
             {/* {TokenService.hasAuthToken()
                 ? this.renderBlogFeedLink()
                 : this.renderLandingLink()} */}
