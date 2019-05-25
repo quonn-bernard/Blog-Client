@@ -23,10 +23,7 @@ class Comment extends Component {
       <section className="section section-grid">
       <div></div>
       <div className="section-grid-item">
-        {/* <h2>Login</h2>
-        <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
-        <p>Username:"demo1234"</p>
-        <p>Pass:"Demo1234!"</p> */}
+        
       <form
         className='CommentForm'
         onSubmit={this.handleSubmit}
