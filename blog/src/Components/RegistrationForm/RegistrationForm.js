@@ -44,7 +44,6 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { error } = this.state;
-    
     return (
 
       <React.Fragment>
@@ -54,7 +53,7 @@ class RegistrationForm extends React.Component {
           <section className="section section-grid">
             <div></div>
             <div className="section-grid-item">
-
+            <h2>Registered Users Can Create New Bookmarks!</h2>
               <form id="contact-form" onSubmit={this.handleSubmit}>
                 <div role='alert'>
                   {error && <p className='red'>{error}</p>}
