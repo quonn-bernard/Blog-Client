@@ -15,6 +15,7 @@ class BlogFeed extends React.Component {
     super(props)
     this.getVideosResult = this.getVideosResult.bind(this);
   }
+
   static contextType = FeedContext;
 
   componentDidMount() {
@@ -24,19 +25,16 @@ class BlogFeed extends React.Component {
       .catch(this.context.setError)
   }
 
+  //Makes youtube query
   getVideosResult(term) {
     console.log(term)
     ArticleApiService.getVideos(term)
-      // 
       .then(data => data.json())
       .then(data => data.items)
       .then(this.context.setResults)
-    // .then(data => 
-    //   // (console.log(data.items[1].snippet)))
-    //   (console.log(data.items)))
-
   }
 
+  // Renders youtube api query results
   renderResults() {
     const { results = [] } = this.context
     console.log(this.context.results)
@@ -44,77 +42,108 @@ class BlogFeed extends React.Component {
       let id = i * Math.floor(Math.random() * 20)
       return <React.Fragment>
         <SearchResult
-          // key={post.id.videoId}
           result={post}
         />
       </React.Fragment>
-
     }
     )
-
   }
 
   renderPosts() {
+
     const { feed = [] } = this.context
-    console.log(this.context)
+
     return feed.map((post, i) => {
       let id = i * Math.floor(Math.random() * 20)
+
       return <React.Fragment>
+
         <BlogPost
-          // key={post.id.videoId}
           post={post}
         />
+
       </React.Fragment>
     }
+
     )
   }
 
   render() {
+
+    // Additional styling for feed
     const textStyle = {
       textAlign: "left",
       marginBottom: "37px"
     }
+
     const { error = [] } = this.context
+
     return (
       <section className="feed-container">
+
         <div className="feed-grid">
+
           <div className="spacerLeft"></div>
+
           <div className="feed-grid-item" style={textStyle}>
 
             <Tabs>
+
               <div label="Bookmarks">
                 {
+                  // Renders if api call to database is successful
                   !error
                     ? this.renderPosts()
                     : <p>No Posts have been created, but the good news is that you can create one
+
                 <Link
                         to='/create_post'>
                         here
                </Link>
-                    </p>}
+
+                    </p>
+                }
 
               </div>
+
               <div label="Video Search">
+
                 <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
+
                 {
+                  // Renders if api call to database is successful
                   !error
                     ? this.renderResults()
                     : <p>No Posts have been created, but the good news is that you can create one
+
                 <Link
                         to='/create_post'>
                         here
                </Link>
-                    </p>}
+
+                    </p>
+                }
+
               </div>
+
             </Tabs>
+
           </div>
+
           <div className="spacerRight">
+
             <div className="side-panels flexed">
+
               <AccountPanel className="side-panel-content" user={this.context.user}></AccountPanel>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
+
     );
   }
 }
