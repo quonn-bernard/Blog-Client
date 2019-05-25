@@ -61,7 +61,7 @@ export default class ResultPage extends Component {
         alert("Post Created Successfully!")
 
         const { location, history } = this.props
-        const destination = (location.state || {}).from || '/blogFeed'
+        const destination = (location.state || {}).from || '/bmFeed'
         history.push(destination)
     }
 
