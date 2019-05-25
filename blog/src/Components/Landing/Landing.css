@@ -57,11 +57,11 @@ button.Button.btn.submit_btn {
   margin: 15px auto;
 }
 
-.search{
-  color: red
+.search {
+  color: red;
 }
 
-.landing-content-text{
+.landing-content-text {
   font-size: 26px;
   text-align: left;
 }
@@ -77,5 +77,6 @@ button.Button.btn.submit_btn {
 
   #contact-form {
     width: 300px;
+    margin: auto;
   }
 }
