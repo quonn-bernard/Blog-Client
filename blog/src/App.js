@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Link, Redirect } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
 import TopNav from "./Components/TopNav/TopNav";
 import Landing from "./Components/Landing/Landing";
-import Contact from "./Components/Contact/Contact";
 import ToggleNav from "./Components/ToggleNav/ToggleNav";
 import Backdrop from "./Components/Backdrop/Backdrop";
 import PostPage from "./Components/PostPage/PostPage";
@@ -61,11 +60,10 @@ class App extends React.Component {
           {backdrop}
           <Switch>
             <Route exact path={"/"} component={Landing} />
-            <Route path={"/blogFeed"} component={BlogFeed} />
+            <Route path={"/bmFeed"} component={BlogFeed} />
             <Route path={"/login"} component={Login} />
             <Route path={"/register"} component={Registration} />
             <PrivateRoute path={"/create_post"} component={Create_Post} />
-            <Route path={"/contact"} component={Contact} />
             <Route exact path={"/post/:postId"} render={props => <PostPage {...props}/>}/>
             <Route exact path={"/result/:resultId"} render={props => <ResultPage {...props}/>}/>
             <Route exact path={"/account/:username"} render={props => <SubscriberPage {...props}/>}/>

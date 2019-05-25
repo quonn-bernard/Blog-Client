@@ -53,6 +53,10 @@
   grid-template-columns: auto 85% auto;
 }
 
+.post-page-grid{
+  display: grid;
+  grid-template-columns: auto 85% auto;
+}
 .grey-bg {
   background: grey;
 }
