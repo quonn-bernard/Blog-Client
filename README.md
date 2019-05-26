@@ -20,7 +20,7 @@ Database: PostgreSQL
 
 API: https://developers.google.com/youtube/v3/ 
 
-## Future Features
+## Future Development
 I plan to add edit and delete functionality, bookmarks and search results filters, and the ability to share bookmarks.
 
 
