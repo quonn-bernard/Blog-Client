@@ -8,3 +8,12 @@ http://github.com
 
 ## Screenshots
 ![App Screenshot](https://i.imgur.com/oq0kxPO.png)
+
+## API Documentation
+[API Documentation](https://github.com/quonn-bernard/Video-Marker-Server)
+
+## Tech Stack
+Front End => React, CSS3
+Middleware => [API Documentation](https://Expressjs.com), [morgan](https://www.npmjs.com/package/morgan/v/1.1.1), [Knex](https://knexjs.org/)
+
+
