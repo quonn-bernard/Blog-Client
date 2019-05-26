@@ -19,10 +19,7 @@ Middleware:[Express Server](https://Expressjs.com), [morgan](https://www.npmjs.c
 
 Database: PostgreSQL
 
-API:Youtube.com
+API:https://developers.google.com/youtube/v3/ 
 
-Frontend: CSS3 and JavaScript ES6 using React
-Backend: Express server with a PostgreSQl database
-API used: Online Movie Database API
 
 
