@@ -33,9 +33,7 @@ class RegistrationForm extends React.Component {
         }
         this.timeout = setTimeout(() => {
           this.props.onRegistrationSuccess()
-      }, 2000)
-
-        
+      }, 2000)        
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -45,11 +43,9 @@ class RegistrationForm extends React.Component {
   render() {
     const { error } = this.state;
     return (
-
       <React.Fragment>
         <Notification top={this.context.top} message={`created ${this.context.user}`} notification={this.context.notification}></Notification>
         <div>
-
           <section className="section section-grid">
             <div></div>
             <div className="section-grid-item">
@@ -58,8 +54,7 @@ class RegistrationForm extends React.Component {
                 <div role='alert'>
                   {error && <p className='red'>{error}</p>}
                 </div>
-                <div className='user_name'>
-                  
+                <div className='user_name'> 
                   <Input
                     name='user_name'
                     type='text'
@@ -69,29 +64,26 @@ class RegistrationForm extends React.Component {
                     className="text">
                   </Input>
                 </div>
-
                 <div className='email'>
                   <Input
                     name='email'
                     type='email'
                     required
                     id='RegistrationForm__email'
-                    placeHolder="Email(Required)"
+                    placeholder="Email(Required)"
                     className="text">
                   </Input>
                 </div>
-
                 <div className='password'>
                   <Input
                     name='password'
                     type='password'
                     required
                     id='RegistrationForm__password'
-                    placeHolder="Password(Required)"
+                    placeholder="Password(Required)"
                     className="text">
                   </Input>
                 </div>
-
                 <Button className="btn submit_btn" type='submit'>
                   Register
               </Button>

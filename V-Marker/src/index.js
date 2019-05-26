@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { FeedProvider } from "./contexts/FeedContext";
 import { PostProvider } from "./contexts/PostContext"; 
 import { NavProvider } from "./contexts/NavContext"; 
-
+console.log(process.env)
 ReactDOM.render(<BrowserRouter><FeedProvider><PostProvider><NavProvider><App /></NavProvider></PostProvider></FeedProvider></BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

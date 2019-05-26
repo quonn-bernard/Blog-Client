@@ -1,6 +1,6 @@
 import React from 'react';
 import FeedContext from "../../contexts/FeedContext";
-import BlogPost from '../../Components/Container/BlogPost/BlogPost';
+import BlogPost from '../../Components/BlogPost/BlogPost';
 import AccountPanel from '../../Components/AccountPanel/AccountPanel';
 import SearchResult from '../../Components/SearchResult/SearchResult';
 import VideoSearchForm from '../../Components/VideoSearchForm/VideoSearchForm';
@@ -27,7 +27,6 @@ class BlogFeed extends React.Component {
 
   //Makes youtube query
   getVideosResult(term) {
-    console.log(term)
     ArticleApiService.getVideos(term)
       .then(data => data.json())
       .then(data => data.items)
@@ -37,11 +36,11 @@ class BlogFeed extends React.Component {
   // Renders youtube api query results
   renderResults() {
     const { results = [] } = this.context
-    console.log(this.context.results)
     return results.map((post, i) => {
       let id = i * Math.floor(Math.random() * 20)
       return <React.Fragment>
         <SearchResult
+          key={id}
           result={post}
         />
       </React.Fragment>
@@ -56,8 +55,7 @@ class BlogFeed extends React.Component {
     return feed.map((post, i) => {
       let id = i * Math.floor(Math.random() * 20)
 
-      return <React.Fragment>
-
+      return <React.Fragment key={id}>
         <BlogPost
           post={post}
         />
@@ -69,26 +67,18 @@ class BlogFeed extends React.Component {
   }
 
   render() {
-
     // Additional styling for feed
     const textStyle = {
       textAlign: "left",
       marginBottom: "37px"
     }
-
     const { error = [] } = this.context
-
     return (
       <section className="feed-container">
-
         <div className="feed-grid">
-
           <div className="spacerLeft"></div>
-
           <div className="feed-grid-item" style={textStyle}>
-
             <Tabs>
-
               <div label="Bookmarks">
                 {
                   // Renders if api call to database is successful
@@ -100,16 +90,11 @@ class BlogFeed extends React.Component {
                         to='/create_post'>
                         here
                </Link>
-
                     </p>
                 }
-
               </div>
-
               <div label="Video Search">
-
                 <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
-
                 {
                   // Renders if api call to database is successful
                   !error
@@ -120,30 +105,18 @@ class BlogFeed extends React.Component {
                         to='/create_post'>
                         here
                </Link>
-
                     </p>
                 }
-
               </div>
-
             </Tabs>
-
           </div>
-
           <div className="spacerRight">
-
             <div className="side-panels flexed">
-
               <AccountPanel className="side-panel-content" user={this.context.user}></AccountPanel>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     );
   }
 }

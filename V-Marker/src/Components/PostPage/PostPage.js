@@ -35,34 +35,33 @@ export default class PostPage extends Component {
         const style = {
             textAlign: "left"
         }
-        
         const { post = [] } = this.context
         return <>
-                <iframe
-                    className="mbl-yt-frame"
-                    width="100%"
-                    height="250"
-                    src={post.image}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                >
-                </iframe>
-                <iframe
-                    className="yt-frame"
-                    width="100%"
-                    height="400"
-                    src={post.image}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                >
-                </iframe>
-                <section style={style}>
-                    <h2>"{post.title}"</h2>
-                    <RatingStars rating={post.rating} />
-                    <PostContent post={post.content}></PostContent>
-                </section>
+            <iframe
+                className="mbl-yt-frame"
+                width="100%"
+                height="250"
+                src={post.image}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            >
+            </iframe>
+            <iframe
+                className="yt-frame"
+                width="100%"
+                height="400"
+                src={post.image}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            >
+            </iframe>
+            <section style={style}>
+                <h2>"{post.title}"</h2>
+                <RatingStars rating={post.rating} />
+                <PostContent post={post.content}></PostContent>
+            </section>
         </>
     }
 

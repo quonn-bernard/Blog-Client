@@ -18,7 +18,6 @@ export function RatingStars({rating}) {
   }
 
   return <span className='starRating'>
-      {console.log(rating)}
     { stars.map((star, index) => <Star key={index} filled={star.filled} />) }
   </span>
 }

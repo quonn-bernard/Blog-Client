@@ -10,13 +10,13 @@ class Login extends Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 
   // Fires success messages and re-routes user to blogfeed
   handleLoginSuccess = () => {
-alert("Logged in successfully")
+    alert("Logged in successfully")
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/bmFeed'
     history.push(destination)

@@ -11,41 +11,25 @@ export default class SearchResult extends Component {
     }
 
     render() {
-        
         const { result } = this.props
         result.image === ""
             ? this.state.image = "https://picsum.photos/300"
             : this.state.image = result.snippet.thumbnails.high.url
         const videoId = result.id.videoId;
-        // console.log(post.id.video)
         return (
-    
-                <Link className="BlogPostListedItem" to={`/result/${result.id.videoId}`} >
-
-                    <div className='BlogPostListed__image' style={{ backgroundImage: `url(${this.state.image})` }} />
-
-                    <div className='BlogPostListedText'>
-                        <div className='PostListItem__text'>
-                            {/* <h2 className='PostListItem__heading'>{truncateTitle(post.title)}</h2>
-<p className='PostListItem__description'>{truncateContent(post.content)}</p> */}
-                            <h2 className='PostListItem__heading'>{result.snippet.title}</h2>
-                            <h4>Channel: {result.snippet.channelTitle}</h4>
-                            <p className='PostListItem__description'>{result.snippet.description}</p>
-                        </div>
-
-                        <div className='PostListItem__comments'>
-
-                            {/* <ThingStarRating rating={post.average_comment_rating} /> */}
-                            {/* <span id='PostListItem__comment-count'>{readableCommentCount(post.number_of_comments)}</span> */}
-
-                            <span id='PostListItem__comment-count'>{result.number_of_comments}</span>
-
-                            {/* <p id='PostListItem__comment-count'>Posted on: {post.date_created}</p> */}
-
-                        </div>
-
+            <Link className="BlogPostListedItem" key={videoId} to={`/result/${result.id.videoId}`} >
+                <div className='BlogPostListed__image' style={{ backgroundImage: `url(${this.state.image})` }} />
+                <div className='BlogPostListedText'>
+                    <div className='PostListItem__text'>
+                        <h2 className='PostListItem__heading'>{result.snippet.title}</h2>
+                        <h4>Channel: {result.snippet.channelTitle}</h4>
+                        <p className='PostListItem__description'>{result.snippet.description}</p>
                     </div>
-                </Link>
+                    <div className='PostListItem__comments'>
+                        <span id='PostListItem__comment-count'>{result.number_of_comments}</span>
+                    </div>
+                </div>
+            </Link>
         )
     }
 }

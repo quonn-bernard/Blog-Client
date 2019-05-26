@@ -29,7 +29,7 @@ class Landing extends React.Component {
             </p>
             <div className="landing-btns-box">
               <Link className="btn" to="/bmFeed">
-                {searchGlass} Find Tutorials
+                {searchGlass} Search Videos
             </Link>
               <Link className="btn" to="/login">
                 Login as a Guest

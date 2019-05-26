@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import FeedContext from '../../contexts/FeedContext'
 import ArticleApiService from '../../services/article-api-service'
-import { Link } from "react-router-dom";
 import { Section } from '../Utils/Utils'
-import Comment from '../Comment/Comment'
 import "./ResultPage.css";
 import { Button, Textarea, Input } from '../Utils/Utils';
 import TokenService from '../../services/token-service';
@@ -109,9 +107,9 @@ export default class ResultPage extends Component {
                     width="100%"
                     height="315"
                     src={post}
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    allowFullScreen>
                 </iframe>
 
                 <div className="instruction-box">

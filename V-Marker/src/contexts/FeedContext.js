@@ -60,7 +60,6 @@ export class FeedProvider extends Component {
   
 
   setError = error => {
-    console.error()
     this.setState({ error })
   }
 
@@ -78,15 +77,11 @@ export class FeedProvider extends Component {
   }
 
   setPost = post => {
-    console.log('Setting Feed Context post')
-    console.log(post)
     this.setState({ post })
   }
 
   clearPost = () => {
-    console.log('Clear Post Context post')
     this.setPost()
-    // this.setComments([])
   }
 
   setResults = results => {

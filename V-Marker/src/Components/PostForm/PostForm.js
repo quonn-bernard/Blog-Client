@@ -35,24 +35,16 @@ class PostForm extends Component {
 
   render() {
     return (
-
       <React.Fragment>
         <section className="section section-grid">
           <div></div>
           <div className="section-grid-item">
-            {/* <h2>Login</h2>
-            <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
-            <p>Username:"demo1234"</p>
-            <p>Pass:"Demo1234!"</p> */}
-
             <form id="contact-form"
               className='CommentForm'
               onSubmit={this.handleSubmit}>
               <div role='alert'>
-                {/* {error && <p className='red'>{error}</p>} */}
               </div>
               <div className='title'>
-                
                 <Input
                   name='title'
                   type='text'
@@ -62,34 +54,30 @@ class PostForm extends Component {
                 >
                 </Input>
               </div>
-
               <div className='image'>
-              
                 <Input
                   name='image'
                   type='text'
                   id='Post__image'
                   placeholder="Image"
-                  >
+                >
                 </Input>
               </div>
               <div className='content'>
-          
-          <Textarea
-            required
-            aria-label='Enter Post Text...'
-            name='content'
-            id='content'
-            cols='30'
-            rows='5'
-            placeholder='Enter Post Text...'>
-          </Textarea>
-        </div>
+                <Textarea
+                  required
+                  aria-label='Enter Post Text...'
+                  name='content'
+                  id='content'
+                  cols='30'
+                  rows='5'
+                  placeholder='Enter Post Text...'>
+                </Textarea>
+              </div>
               <Button className="btn submit_btn" type='submit'>
                 SUBMIT
-                            </Button>
+              </Button>
             </form>
-
           </div>
         </section>
       </React.Fragment >

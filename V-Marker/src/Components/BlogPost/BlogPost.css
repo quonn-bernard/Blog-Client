@@ -1,0 +1,122 @@
+/* post image, content and comments sections */
+.main-panels {
+  margin-bottom: 30px;
+}
+
+/* post image */
+.BlogPostListed__image {
+  height: 195px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* title content */
+.title-content {
+  height: auto;
+  text-decoration: underline;
+}
+
+/* post content */
+.post-content {
+  height: auto;
+}
+
+/* comments-content */
+.comments-content {
+  height: 50px;
+}
+
+a.BlogPostListedItem {
+  text-decoration: none;
+  color: black;
+}
+
+.BlogPostListedItem {
+  background: none;
+  display: flex;
+  border: 0;
+  font-size: smaller;
+  flex-direction: column;
+  text-decoration: none;
+  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-right: 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.PostListItem:hover {
+  cursor: pointer;
+}
+
+.PostListItem,
+.PostListItem:visited {
+  color: #555;
+}
+
+.BlogPostListedText {
+  padding: 0 12% 5%;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+  text-align: left;
+}
+
+.PostListItem__details h2 {
+  margin: 0;
+  text-decoration: none;
+}
+
+.PostListItem__details .PostStarRating {
+  padding: 5px 0;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.PostListItem__details span {
+  display: block;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.ratingSpan {
+  color: black;
+  margin-top: -5px;
+  margin: -5px 5px 0;
+  font-size: 28px;
+}
+
+.postBox{
+  margin-bottom:15px;
+  padding-bottom: 30px;
+}
+
+.link{ color: red}
+
+@media screen and (min-width: 687px) {
+  
+  .BlogPostListed__image {
+    height: 230px;
+    width: 165px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .BlogPostListedText {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  .BlogPostListedItem {
+    flex-direction: row;
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+}

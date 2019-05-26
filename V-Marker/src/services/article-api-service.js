@@ -1,6 +1,7 @@
 import TokenService from './token-service';
 import config from '../config';
 
+// Handles all client API Calls
 const ArticleApiService = {
   getPosts() {
     return fetch(`${config.API_ENDPOINT}/posts`, {
@@ -109,18 +110,18 @@ const ArticleApiService = {
       },
 
        // get post by id
-       getUserAccount(userName) {
-        return fetch(`${config.API_ENDPOINT}/account/${userName}`, {
-          headers: {
-            'authorization':`bearer ${TokenService.getAuthToken()}`,
-          },
-        })
-          .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-          );
-      },
+      //  getUserAccount(userName) {
+      //   return fetch(`${config.API_ENDPOINT}/account/${userName}`, {
+      //     headers: {
+      //       'authorization':`bearer ${TokenService.getAuthToken()}`,
+      //     },
+      //   })
+      //     .then(res =>
+      //       (!res.ok)
+      //         ? res.json().then(e => Promise.reject(e))
+      //         : res.json()
+      //     );
+      // },
 }
 
 export default ArticleApiService

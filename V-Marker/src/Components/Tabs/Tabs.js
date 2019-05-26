@@ -24,7 +24,6 @@ class Tabs extends Component {
     const style = {
       marginTop: "0"
     }
-
     const {
       onClickTabItem,
       props: {
@@ -34,12 +33,10 @@ class Tabs extends Component {
         activeTab,
       }
     } = this;
-
     return (
       <div className="tabs">
         <ol
         className="tabsList" 
-        
         > 
           {children.map((child) => {
             const { label } = child.props;

@@ -10,18 +10,9 @@
 #contact-form input {
   display: block;
   width: 100%;
-  /* max-width: 200px; */
   margin-bottom: 15px;
   height: 35px;
 }
-
-/* Textarea{
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 15px;
-    height: 35px;
-  } */
 
 input[type="submit"] {
   border: none;
@@ -70,10 +61,6 @@ button.Button.btn.submit_btn {
   #contact-form input {
     max-width: 300px;
   }
-
-  /* Textarea{
-    max-width: 300px;
-  } */
 
   #contact-form {
     width: 300px;
