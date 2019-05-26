@@ -21,7 +21,7 @@ Database: PostgreSQL
 API: https://developers.google.com/youtube/v3/ 
 
 ## Future Development
-I plan to add edit and delete functionality, bookmarks and search results filters, and the ability to share bookmarks.
+I plan to add edit and delete functionality, bookmark/search result filters, and the ability to share bookmarks.
 
 
 
