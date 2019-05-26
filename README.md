@@ -13,13 +13,13 @@ http://github.com
 [API Documentation](https://github.com/quonn-bernard/Video-Marker-Server)
 
 ## Tech Stack
-Front End:ReactJS, CSS3
+Front End: ReactJS, CSS3
 
-Middleware:[Express Server](https://Expressjs.com), [morgan](https://www.npmjs.com/package/morgan/v/1.1.1), [Knex](https://knexjs.org/)
+Middleware: [Express Server](https://Expressjs.com), [morgan](https://www.npmjs.com/package/morgan/v/1.1.1), [Knex](https://knexjs.org/)
 
 Database: PostgreSQL
 
-API:https://developers.google.com/youtube/v3/ 
+API: https://developers.google.com/youtube/v3/ 
 
 
 
