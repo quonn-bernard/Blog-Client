@@ -14,7 +14,7 @@ http://github.com
 ## Tech Stack
 Front End: ReactJS, CSS3
 
-Middleware: Express Server, [morgan](https://www.npmjs.com/package/morgan/v/1.1.1), [Knex](https://knexjs.org/)
+Middleware: Express server, [morgan](https://www.npmjs.com/package/morgan/v/1.1.1), [Knex](https://knexjs.org/)
 
 Database: PostgreSQL
 
