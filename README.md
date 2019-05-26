@@ -8,4 +8,3 @@ http://github.com
 
 ## Screenshots
 ![App Screenshot](https://i.imgur.com/oq0kxPO.png)
-![App Screenshot](https://i.imgur.com/9QwGyG1.png)
