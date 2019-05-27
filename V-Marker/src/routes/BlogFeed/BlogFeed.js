@@ -91,7 +91,7 @@ class BlogFeed extends React.Component {
 
                 <Link
                         to='/create_post'>
-                        here
+                        her
                </Link>
                     </p>
                 }
@@ -99,7 +99,7 @@ class BlogFeed extends React.Component {
               <div label="Video Search">
                 <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
                 {
-                  Renders if api call to database is successful
+                  // Renders if api call to database is successful
                   !error
                     ? this.renderResults()
                     : <p>Enter a search term into the box then press enter!</p>
