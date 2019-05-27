@@ -91,13 +91,13 @@ class BlogFeed extends React.Component {
                 }
               </div>
               <div label="Video Search">
-                {/* <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
+                <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
                 {
                   // Renders if api call to database is successful
                   !error
                     ? this.renderResults()
                     : <p>Enter a search term into the box then press enter!</p>
-                } */}
+                }
               </div>
             </Tabs>
           </div>
