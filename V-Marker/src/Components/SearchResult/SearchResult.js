@@ -12,6 +12,7 @@ export default class SearchResult extends Component {
 
     render() {
         const { result } = this.props
+        console.log(result)
         result.image === ""
             ? this.state.image = "https://picsum.photos/300"
             : this.state.image = result.snippet.thumbnails.high.url
