@@ -38,7 +38,7 @@ class BlogFeed extends React.Component {
     const { results = [] } = this.context
 
     return results.map((post, i) => {
-
+      console.log(results)
       let id = i * Math.floor(Math.random() * 20)
 
       return <React.Fragment>
@@ -99,16 +99,10 @@ class BlogFeed extends React.Component {
               <div label="Video Search">
                 <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
                 {
-                  // Renders if api call to database is successful
-              //     !error
-              //       ? this.renderResults()
-              //       : <p>Enter a search term into the box then press enter!
-
-              //   <Link
-              //           to='/create_post'>
-              //           here
-              //  </Link>
-              //       </p>
+                  Renders if api call to database is successful
+                  !error
+                    ? this.renderResults()
+                    : <p>Enter a search term into the box then press enter!</p>
                 }
               </div>
             </Tabs>
