@@ -87,23 +87,17 @@ class BlogFeed extends React.Component {
                   // Renders if api call to database is successful
                   !error
                     ? this.renderPosts()
-                    : <p>No Posts have been created, but the good news is that you can create one
-
-                <Link
-                        to='/create_post'>
-                        her
-               </Link>
-                    </p>
+                    : <p>Oops!!! Looks like no bookmarks have been created yet!</p>
                 }
               </div>
               <div label="Video Search">
-                <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
+                {/* <VideoSearchForm get={this.getVideosResult}></VideoSearchForm>
                 {
                   // Renders if api call to database is successful
                   !error
                     ? this.renderResults()
                     : <p>Enter a search term into the box then press enter!</p>
-                }
+                } */}
               </div>
             </Tabs>
           </div>
