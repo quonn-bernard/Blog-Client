@@ -5,7 +5,6 @@ import AccountPanel from '../../Components/AccountPanel/AccountPanel';
 import SearchResult from '../../Components/SearchResult/SearchResult';
 import VideoSearchForm from '../../Components/VideoSearchForm/VideoSearchForm';
 import ArticleApiService from "../../services/article-api-service";
-import { Link } from "react-router-dom";
 import Tabs from '../../Components/Tabs/Tabs';
 import "./BlogFeed.css";
 
@@ -38,7 +37,7 @@ class BlogFeed extends React.Component {
     const { results = [] } = this.context
 
     return results.map((post, i) => {
-      console.log(results)
+      (results)
       let id = i * Math.floor(Math.random() * 20)
 
       return <React.Fragment>
