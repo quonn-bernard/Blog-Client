@@ -19,7 +19,7 @@ export class NavProvider extends Component {
   }
 
   test = () => {
-    console.log("Nav Context")
+    ("Nav Context")
   }
 
   render() {

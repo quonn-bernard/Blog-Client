@@ -32,7 +32,6 @@ const ArticleApiService = {
   
   // This is a call to the server at localhost:8000/api/users to add new user to DB
   postPost(post) {
-   console.log(post)
     return fetch (`${config.API_ENDPOINT}/posts`, {
       method: 'POST',
       headers: {

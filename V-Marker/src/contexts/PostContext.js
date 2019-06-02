@@ -27,28 +27,22 @@ export class PostProvider extends Component {
   };
 
   setError = error => {
-    console.error(error)
     this.setState({ error })
   }
 
   clearError = () => {
-    console.log('Post Context is accessed')
     this.setState({ error: null })
   }
 
   setPost = post => {
-    console.log('Setting Post Context post')
-    console.log(post)
     this.setState({ post })
   }
 
   setComments = comments => {
-    console.log('Set Comments Post Context', comments)
     this.setState({ comments })
   }
 
   clearPost = () => {
-    console.log('Clear Post Context post')
     this.setPost(nullPost)
     this.setComments([])
   }

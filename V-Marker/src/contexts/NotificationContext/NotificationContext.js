@@ -21,7 +21,7 @@ export default class NotificationProvider extends React.Component {
   };
 
   test = () => {
-    console.log('test')
+    ('test')
   }
 
   state = {

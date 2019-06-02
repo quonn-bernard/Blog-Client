@@ -24,16 +24,15 @@ class VideoSearchForm extends Component {
     const search = ev.target.search.value
 
     this.props.get(search)
-    // console.log(search)
     this.setState({ error: null })
 
-    // ev.target.search.value = "";
+    ev.target.search.value = "";
   }
 
   handleChange = ev => {
     this.setState({search: ev.target.value})
     this.props.get(this.state.search)
-    console.log(this.state.search)
+    (this.state.search)
   }
 
   render() {
@@ -81,14 +80,9 @@ class VideoSearchForm extends Component {
                   required
                   id='video-search-box'
                   placeholder="Enter Video Search Term"
-                  // onChange={this.handleChange}
                 >
                 </Input>
               </div>
-
-              {/* <Button style={btnStyle} type='submit'>
-                Get Videos
-              </Button> */}
             </form>
 
           </div>

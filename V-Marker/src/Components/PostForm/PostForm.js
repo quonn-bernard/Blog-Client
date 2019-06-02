@@ -12,7 +12,6 @@ class PostForm extends Component {
   state = { error: null }
 
   handleSubmit = ev => {
-    (ev)
     ev.preventDefault()
     const { title, image, content } = ev.target
     this.setState({ error: null })

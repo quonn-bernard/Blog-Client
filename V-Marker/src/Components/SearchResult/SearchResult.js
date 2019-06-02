@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import './BlogPost.css'
 
 export default class SearchResult extends Component {
     constructor(props) {
@@ -12,13 +11,12 @@ export default class SearchResult extends Component {
 
     render() {
         const { result } = this.props
-        console.log(result)
         result.image === ""
             ? this.state.image = "https://picsum.photos/300"
             : this.state.image = result.snippet.thumbnails.high.url
         const videoId = result.id.videoId;
         return (
-            <Link className="BlogPostListedItem" key={videoId} to={`/result/${result.id.videoId}`} >
+            <Link className="BlogPostListedItem"  to={`/result/${result.id.videoId}`} >
                 <div className='BlogPostListed__image' style={{ backgroundImage: `url(${this.state.image})` }} />
                 <div className='BlogPostListedText'>
                     <div className='PostListItem__text'>
