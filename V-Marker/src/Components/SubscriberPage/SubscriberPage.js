@@ -13,7 +13,7 @@ class SubscriberPage extends React.Component {
 
   componentDidMount() {
     const userName = localStorage.getItem('user')
-    console.log(userName)
+    (userName)
     this.context.clearError()
     ArticleApiService.getUserAccount(userName)
       .then(this.context.setCurrentUserPosts)

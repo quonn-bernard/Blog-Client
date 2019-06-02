@@ -56,7 +56,7 @@ export default class ResultPage extends Component {
                 this.setState({ error: res.error })
             })
             
-        alert("Post Created Successfully!")
+        alert("Bookmark Created Successfully!")
 
         const { location, history } = this.props
         const destination = (location.state || {}).from || '/bmFeed'
@@ -102,7 +102,6 @@ export default class ResultPage extends Component {
         const { post = [] } = this.context
         return <>
             <React.Fragment>
-
                 <iframe
                     width="100%"
                     height="315"
@@ -111,11 +110,9 @@ export default class ResultPage extends Component {
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen>
                 </iframe>
-
                 <div className="instruction-box">
                     <h4>Watch the video, and if you found it helpful, leave a comment below describing how. Other's will be using these comments so be specific!!</h4>
                 </div>
-
                 <form
                     style={form}
                     id=""
@@ -136,7 +133,6 @@ export default class ResultPage extends Component {
                         >
                         </Input>
                     </div>
-
                     <div className='content'>
                         <Textarea
                             aria-label="Share your thoughts on the video's usefulness here..."
@@ -168,12 +164,10 @@ export default class ResultPage extends Component {
                     </Button>
                 </form>
             </React.Fragment>
-
         </>
     }
 
     render() {
-
         const btn = {
             margin: "10px 0 0",
             width: "33%",
@@ -198,16 +192,10 @@ export default class ResultPage extends Component {
             content = this.renderPost()
         }
         return (
-
             <Section className='PostPage section section-grid'>
                 <div></div>
                 <div className="section-grid-item">
                     {content}
-                    {/* <div style={btnBox}>
-                        <Link style={btn} to="">
-                            Create Bookmark
-                        </Link>
-                    </div> */}
                 </div>
                 <div></div>
             </Section>
@@ -223,12 +211,3 @@ function PostContent({ post }) {
     )
 }
 
-function PostComments({ comments = [] }) {
-    return (
-        <ul>
-            {comments.map(comment => {
-                return <p key={comment.id}>{comment.text}</p>
-            })}
-        </ul>
-    )
-}
