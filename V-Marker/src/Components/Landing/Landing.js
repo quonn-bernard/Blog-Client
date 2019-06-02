@@ -24,8 +24,8 @@ class Landing extends React.Component {
             {bookmark}
             <p className="landing-content-text">
               V-MARKER allows users to search videos via youtube api. If the user finds a video that they found useful
-             or just well done in general, they can bookmark it, rate it and leave somefeed back about how the video was of use. 
-              The DEMO credentials are username: "demo1234" password: "Demo1234!"; Signing in will give users the ability to add bookmarks to the "feed".
+             or just well done in general, they can bookmark it, rate it and leave somefeed back about how the video was of use. User must be signed in to 
+             add bookmarks. The DEMO credentials are username: "demo1234" password: "Demo1234!"; 
             </p>
             <div className="landing-btns-box">
               <Link className="btn" to="/bmFeed">
