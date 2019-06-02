@@ -22,9 +22,6 @@ export default class PostPage extends Component {
                 return this.context.setPost(data)
             })
             .catch(this.context.setError)
-        ArticleApiService.getPostComments(postId)
-            .then(this.context.setComments)
-            .catch(this.context.setError)
     }
 
     componentWillUnmount() {
@@ -95,15 +92,5 @@ function PostContent({ post }) {
         <p className='PostPage__content'>
             {post}
         </p>
-    )
-}
-
-function PostComments({ comments = [] }) {
-    return (
-        <ul>
-            {comments.map(comment => {
-                return <p key={comment.id}>{comment.text}</p>
-            })}
-        </ul>
     )
 }
