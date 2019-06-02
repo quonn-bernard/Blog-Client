@@ -18,10 +18,6 @@ export class NavProvider extends Component {
     localStorage.clear();
   }
 
-  test = () => {
-    ("Nav Context")
-  }
-
   render() {
     const value = {
       handleLogoutClick: this.handleLogoutClick,

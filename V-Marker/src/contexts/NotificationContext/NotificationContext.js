@@ -20,11 +20,7 @@ export default class NotificationProvider extends React.Component {
     })
   };
 
-  test = () => {
-    ('test')
-  }
-
-  state = {
+    state = {
     top: -100,
     updatePosition: this.updatePosition,
     message: 'NO MESSAGE',
