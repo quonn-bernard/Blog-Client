@@ -22,21 +22,16 @@ class Create_Post extends React.Component {
   }
 
   render() {
-    
     const context = { top: this.state.top, message: this.state.massage, updateMessage: this.state.updateMessage }
-    
     // return Create Post Component html(JSX)
     return (
-
       // Beginning of page
       <Section className='RegistrationPage'>
         <h2>Create A Post</h2>
-        
           {/* Blog post creation form component */}
           <PostForm
             onPostSuccess={this.handlePostSuccess}
           />
-
       </Section>
     )
   }
