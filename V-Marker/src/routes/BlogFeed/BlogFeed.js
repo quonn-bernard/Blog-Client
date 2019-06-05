@@ -37,7 +37,6 @@ class BlogFeed extends React.Component {
     const { results = [] } = this.context
 
     return results.map((post, i) => {
-      (results)
       let id = i * Math.floor(Math.random() * 20)
 
       return <React.Fragment>
