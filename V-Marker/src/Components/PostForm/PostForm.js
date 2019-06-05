@@ -36,7 +36,7 @@ class PostForm extends Component {
     return (
       <React.Fragment>
         <section className="section section-grid">
-          <div></div>
+          <div className="section-grid-item"></div>
           <div className="section-grid-item">
             <form id="contact-form"
               className='CommentForm'
