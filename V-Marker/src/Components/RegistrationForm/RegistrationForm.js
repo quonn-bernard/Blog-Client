@@ -3,6 +3,7 @@ import { Button, Input, Required, Textarea } from '../Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
 import FeedContext from "../../contexts/FeedContext";
 import Notification from "../Notifications/Notifications";
+import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
   
@@ -47,7 +48,7 @@ class RegistrationForm extends React.Component {
         <Notification top={this.context.top} message={`created ${this.context.user}`} notification={this.context.notification}></Notification>
         <div>
           <section className="section section-grid">
-            <div></div>
+          <div className="section-grid-item"></div>
             <div className="section-grid-item">
             <h2>Registered Users Can Create New Bookmarks!</h2>
               <form id="contact-form" onSubmit={this.handleSubmit}>
