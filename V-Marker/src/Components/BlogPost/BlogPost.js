@@ -46,23 +46,3 @@ export default class PostListItem extends Component {
   }
 }
 
-// function readableCommentCount(number) {
-//   switch (number) {
-//     case 0:
-//       return 'no comments yet'
-
-//     case 1:
-//       return `1 comment`
-
-//     default:
-//       return `${number} comments`
-//   }
-// }
-
-// function truncateTitle(text) {
-//   return text
-// }
-
-// function truncateContent(text) {
-//   return text
-// }
