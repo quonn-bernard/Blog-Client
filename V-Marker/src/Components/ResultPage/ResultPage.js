@@ -16,6 +16,12 @@ export default class ResultPage extends Component {
         },
     }
 
+    state = ({
+        title: '',
+       content: '',
+       rating: '' 
+    }) 
+
     static contextType = FeedContext
 
     componentDidMount() {
@@ -120,10 +126,8 @@ export default class ResultPage extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div role='alert'>
-    
                     </div>
                     <div className='title'>
-
                         <Input
                             style={commentTitle}
                             name='title'
@@ -193,11 +197,11 @@ export default class ResultPage extends Component {
         }
         return (
             <Section className='PostPage section section-grid'>
-                <div></div>
+                <div className="section-grid-item"></div>
                 <div className="section-grid-item">
                     {content}
                 </div>
-                <div></div>
+                <div className="section-grid-item"></div>
             </Section>
         )
     }
