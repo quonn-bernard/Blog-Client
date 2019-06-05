@@ -5,6 +5,7 @@
 }
 #contact-form {
   width: 200px;
+  margin: auto;
 }
 
 #contact-form input {
@@ -53,7 +54,7 @@ button.Button.btn.submit_btn {
 }
 
 .landing-content-text {
-  font-size: 26px;
+  font-size: 16px;
   text-align: left;
 }
 
@@ -65,5 +66,9 @@ button.Button.btn.submit_btn {
   #contact-form {
     width: 300px;
     margin: auto;
+  }
+  .landing-content-text {
+    font-size: 20px;
+    text-align: left;
   }
 }
