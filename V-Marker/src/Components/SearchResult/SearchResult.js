@@ -24,44 +24,11 @@ export default class SearchResult extends Component {
                         <h4>Channel: {result.snippet.channelTitle}</h4>
                         <p className='PostListItem__description'>{result.snippet.description}</p>
                     </div>
-                    <div className='PostListItem__comments'>
-                        <span id='PostListItem__comment-count'>{result.number_of_comments}</span>
-                    </div>
                 </div>
             </Link>
         )
     }
 }
 
-function readableCommentCount(number) {
-    switch (number) {
-        case 0:
-            return 'no comments yet'
 
-        case 1:
-            return `1 comment`
 
-        default:
-            return `${number} comments`
-    }
-}
-
-function truncateTitle(text) {
-    // const words = text.split(' ')
-
-    // if (words.length > 7) {
-    //   return words.slice(0, 7).join(' ') + ' ...'
-    // }
-
-    return text
-}
-
-function truncateContent(text) {
-    // const words = text.split(' ')
-
-    // if (words.length > 15) {
-    //   return words.slice(0, 10).join(' ') + ' ...'
-    // }
-
-    return text
-}
