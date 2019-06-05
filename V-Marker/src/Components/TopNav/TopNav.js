@@ -36,11 +36,6 @@ class TopNav extends React.Component {
           Bookmarks
         </Link>
 
-        {/* <Link
-          to='/login'>
-          {localStorage.getItem('user')}
-        </Link> */}
-
         <Link
           className="login-logout"
           onClick={this.handleLogoutClick}

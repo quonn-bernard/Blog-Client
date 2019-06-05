@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import FeedContext from '../../contexts/FeedContext'
-import ArticleApiService from '../../services/article-api-service'
-import { Button, Input, Required, Textarea } from '../Utils/Utils';
+import { Input } from '../Utils/Utils';
 
 class VideoSearchForm extends Component {
   constructor(props) {
