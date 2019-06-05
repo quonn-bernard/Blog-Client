@@ -29,8 +29,6 @@ export default class LoginForm extends Component {
         //deconstruct form values into variables
         const { user_name, password } = ev.target;
 
-        //this.context.notification()
-
         this.context.setUser(user_name.value);
 
         window.sessionStorage.setItem("user", this.context.user);
@@ -68,20 +66,19 @@ export default class LoginForm extends Component {
         return (
             <React.Fragment>
                 <section className="section section-grid">
-                    <div></div>
+                    {/* spacer */}
+                    <div className="section-grid-item"></div>
                     <div className="section-grid-item">
                         <h2>Login</h2>
                         <Notification top={this.context.top} message={`Logged in as ${this.context.user}`} notification={this.context.notification}></Notification>
                         <p>Username:"demo1234"</p>
                         <p>Pass:"Demo1234!"</p>
-
                         <form id="contact-form"
                             onSubmit={this.handleSubmitJwtAuth}>
                             <div role='alert'>
                                 {error && <p className='red'>{error}</p>}
                             </div>
                             <div className='user_name'>
-
                                 <Input
                                     name='user_name'
                                     id='LoginForm__user_name'
@@ -89,7 +86,6 @@ export default class LoginForm extends Component {
                                     placeholder="Username(Required)">
                                 </Input>
                             </div>
-
                             <div className='password'>
                                 <Input
                                     name='password'
@@ -99,12 +95,10 @@ export default class LoginForm extends Component {
                                     placeholder="Password(Required)">
                                 </Input>
                             </div>
-
                             <Button className="btn submit_btn" type='submit'>
                                 SUBMIT
                             </Button>
                         </form>
-
                     </div>
                 </section>
             </React.Fragment >
