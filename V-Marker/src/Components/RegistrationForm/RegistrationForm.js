@@ -3,7 +3,6 @@ import { Button, Input, Required, Textarea } from '../Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
 import FeedContext from "../../contexts/FeedContext";
 import Notification from "../Notifications/Notifications";
-import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
   
