@@ -63,6 +63,7 @@ const ArticleApiService = {
 
       // get post by id
       getPost(postId) {
+        console.log("api-fetch-get-post-by-id")
         return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
           headers: {
             'authorization':`bearer ${TokenService.getAuthToken()}`,
