@@ -5,14 +5,19 @@ import FeedContext from "../../contexts/FeedContext";
 import Notification from "../Notifications/Notifications";
 
 class RegistrationForm extends React.Component {
-  
+
   static contextType = FeedContext
 
   static defaultProps = {
     onRegistrationSuccess: () => { }
   }
 
-  state = { error: null }
+  state = {
+    error: null,
+    email: '',
+    user_name: '',
+    password: ''
+  }
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -28,17 +33,24 @@ class RegistrationForm extends React.Component {
         email.value = ''
         user_name.value = ''
         password.value = ''
-        if(this.state.error === null){
+        if (this.state.error === null) {
           this.props.onRegistrationSuccess()
         }
         this.timeout = setTimeout(() => {
           this.props.onRegistrationSuccess()
-      }, 2000)        
+        }, 2000)
       })
       .catch(res => {
         this.setState({ error: res.error })
       })
   }
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
+  }
+
+  // this.handleChange = this.handleChange.bind(this);
+  //       this.handleSubmit = this.handleSubmitJwtAuth.bind(this);
 
   render() {
     const { error } = this.state;
@@ -47,21 +59,24 @@ class RegistrationForm extends React.Component {
         <Notification top={this.context.top} message={`created ${this.context.user}`} notification={this.context.notification}></Notification>
         <div>
           <section className="section section-grid">
-          <div className="section-grid-item"></div>
+            <div className="section-grid-item"></div>
             <div className="section-grid-item">
-            <h2>Registered Users Can Create New Bookmarks!</h2>
+              <h2>Registered Users Can Create New Bookmarks!</h2>
               <form id="contact-form" onSubmit={this.handleSubmit}>
                 <div role='alert'>
                   {error && <p className='red'>{error}</p>}
                 </div>
-                <div className='user_name'> 
+                <div className='user_name'>
                   <Input
                     name='user_name'
                     type='text'
                     required
                     id='RegistrationForm__user_name'
                     placeholder="Username(Required)"
-                    className="text">
+                    className="text"
+                    value={this.state.user_name}
+                    onChange={(ev) => this.handleChange(ev)}
+                    >
                   </Input>
                 </div>
                 <div className='email'>
@@ -71,7 +86,10 @@ class RegistrationForm extends React.Component {
                     required
                     id='RegistrationForm__email'
                     placeholder="Email(Required)"
-                    className="text">
+                    className="text"
+                    value={this.state.email}
+                    onChange={(ev) => this.handleChange(ev)}
+                    >
                   </Input>
                 </div>
                 <div className='password'>
@@ -81,7 +99,10 @@ class RegistrationForm extends React.Component {
                     required
                     id='RegistrationForm__password'
                     placeholder="Password(Required)"
-                    className="text">
+                    className="text"
+                    value={this.state.password}
+                    onChange={(ev) => this.handleChange(ev)}
+                    >
                   </Input>
                 </div>
                 <Button className="btn submit_btn" type='submit'>
