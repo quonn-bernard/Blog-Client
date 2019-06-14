@@ -8,6 +8,18 @@ import "./LoginForm.css";
 
 export default class LoginForm extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            user_name: '',
+            password: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmitJwtAuth = this.handleSubmitJwtAuth.bind(this);
+    }
+
     static contextType = FeedContext
 
     // invoked by handleSubmitBasicAuth
@@ -56,6 +68,10 @@ export default class LoginForm extends Component {
             });
     }
 
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
     // render LoginForm component
     render() {
 
@@ -83,7 +99,10 @@ export default class LoginForm extends Component {
                                     name='user_name'
                                     id='LoginForm__user_name'
                                     required
-                                    placeholder="Username(Required)">
+                                    placeholder="Username(Required)"
+                                    value={this.state.user_name}
+                                    onChange={(ev) => this.handleChange(ev)}
+                                    >
                                 </Input>
                             </div>
                             <div className='password'>
@@ -92,7 +111,10 @@ export default class LoginForm extends Component {
                                     type='password'
                                     required
                                     id='LoginForm__password'
-                                    placeholder="Password(Required)">
+                                    placeholder="Password(Required)"
+                                    value={this.state.password}
+                                    onChange={(ev) => this.handleChange(ev)}
+                                    >
                                 </Input>
                             </div>
                             <Button className="btn submit_btn" type='submit'>

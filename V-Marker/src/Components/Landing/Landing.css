@@ -1,8 +1,19 @@
 #banner {
   height: 100%;
   text-align: center;
-  background-color: white;
+  background: linear-gradient(
+    to right,
+    rgba(253, 5, 5, 0.75),
+    rgba(0, 0, 0, 1)
+  );
+  padding: 45px;
+  color: white;
 }
+
+#banner > h1{
+
+}
+
 #contact-form {
   width: 200px;
   margin: auto;
